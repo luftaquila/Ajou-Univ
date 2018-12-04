@@ -1,0 +1,317 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/LUFT-AQUILA/Documents/Atom/Ajou_Univ/Logic_Circuit
+Eand2
+Z1 w1334898350
+Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z3 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R0
+Z4 8C:/Users/LUFT-AQUILA/Downloads/vhdl_work3/andor_3.vhd
+Z5 FC:/Users/LUFT-AQUILA/Downloads/vhdl_work3/andor_3.vhd
+l0
+L5
+VSBWoQDP69H1]iB]fWf1b_3
+!s100 =;FkQc:m@e?dMQQOzDjO32
+Z6 OV;C;10.5b;63
+32
+Z7 !s110 1543842583
+!i10b 1
+Z8 !s108 1543842583.000000
+Z9 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/LUFT-AQUILA/Downloads/vhdl_work3/andor_3.vhd|
+Z10 !s107 C:/Users/LUFT-AQUILA/Downloads/vhdl_work3/andor_3.vhd|
+!i113 1
+Z11 o-work work -2002 -explicit
+Z12 tExplicit 1 CvgOpt 0
+Adataflow_and
+R2
+R3
+DEx4 work 4 and2 0 22 SBWoQDP69H1]iB]fWf1b_3
+l11
+L10
+VfOEGmI;HPlLPQ;Y<42goa1
+!s100 NV7FUYiZgcfSFnHRab`SA2
+R6
+32
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Eandor
+R1
+R2
+R3
+R0
+R4
+R5
+l0
+L33
+VV2][lY`@AebWfTS22a]R23
+!s100 [l4E@=58SE3=oMYWkR4oN1
+R6
+32
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Astructural
+R2
+R3
+DEx4 work 5 andor 0 22 V2][lY`@AebWfTS22a]R23
+l51
+L38
+Vb;ne87o^l0:a>=3D>:dVh2
+!s100 71Y3SaIfXY]4OJBeOFBVz3
+R6
+32
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Adataflow
+R2
+R3
+Z13 DEx4 work 5 andor 0 22 OF3GL`RbTK^5kXeVEXJ^b2
+l11
+L9
+V_KAOBN;SO1UG89:W049?C1
+!s100 lWV4[>8;=SRll<`>;dh=73
+R6
+32
+!s110 1543837505
+!i10b 1
+!s108 1543837505.000000
+!s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/LUFT-AQUILA/Downloads/vhdl_work3/andor_1.vhd|
+!s107 C:/Users/LUFT-AQUILA/Downloads/vhdl_work3/andor_1.vhd|
+!i113 1
+R11
+R12
+FC:/Users/LUFT-AQUILA/Downloads/vhdl_work3/andor_1.vhd
+w1334821386
+8C:/Users/LUFT-AQUILA/Downloads/vhdl_work3/andor_1.vhd
+Eandor_tb
+Z14 w1543837503
+R2
+R3
+R0
+Z15 8C:/Users/LUFT-AQUILA/Downloads/vhdl_work3/andor_TB.vhd
+Z16 FC:/Users/LUFT-AQUILA/Downloads/vhdl_work3/andor_TB.vhd
+l0
+L6
+VDFJEI;V@cef]PzPbhi3LT1
+!s100 E0?bOiRHa2@1dB`Uoio^_1
+R6
+32
+R7
+!i10b 1
+R8
+Z17 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/LUFT-AQUILA/Downloads/vhdl_work3/andor_TB.vhd|
+Z18 !s107 C:/Users/LUFT-AQUILA/Downloads/vhdl_work3/andor_TB.vhd|
+!i113 1
+R11
+R12
+Atb_architecture
+R2
+R3
+Z19 DEx4 work 8 andor_tb 0 22 DFJEI;V@cef]PzPbhi3LT1
+l28
+L9
+VRX`h^R@5F^@XWCl?:`8hn3
+!s100 [@[7dD_zonoaEOO:VJUWV2
+R6
+32
+R7
+!i10b 1
+R8
+R17
+R18
+!i113 1
+R11
+R12
+Eor2
+R1
+R2
+R3
+R0
+R4
+R5
+l0
+L19
+VQc56jl?2zc_fDe^F2Q2[]1
+!s100 m;d4a]SE[4AS4Z3`<Rihd3
+R6
+32
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Adataflow_or
+R2
+R3
+DEx4 work 3 or2 0 22 Qc56jl?2zc_fDe^F2Q2[]1
+l25
+L24
+Ve1cAcBUP<06QnAYEe>BU`0
+!s100 feCO53K@WTPU^ZgdXW@5b1
+R6
+32
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Etb
+Z20 w1543922480
+R2
+R3
+R0
+Z21 8C:/Users/LUFT-AQUILA/Documents/Atom/Ajou_Univ/Logic_Circuit/vhdl_TB.vhd
+Z22 FC:/Users/LUFT-AQUILA/Documents/Atom/Ajou_Univ/Logic_Circuit/vhdl_TB.vhd
+l0
+L4
+VHz15g^`=10WgPo?A>U3^Q0
+!s100 cSm_i^60[D@O`YYbIZ24G3
+R6
+32
+Z23 !s110 1543923599
+!i10b 1
+Z24 !s108 1543923599.000000
+Z25 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/LUFT-AQUILA/Documents/Atom/Ajou_Univ/Logic_Circuit/vhdl_TB.vhd|
+Z26 !s107 C:/Users/LUFT-AQUILA/Documents/Atom/Ajou_Univ/Logic_Circuit/vhdl_TB.vhd|
+!i113 1
+R11
+R12
+Atb_arch
+R2
+R3
+Z27 DEx4 work 2 tb 0 22 Hz15g^`=10WgPo?A>U3^Q0
+l16
+L7
+VaXT6HB:TGC@H2mBKjD_9<2
+!s100 b;oZ@mNeE2ibU2RF4Azc<0
+R6
+32
+R23
+!i10b 1
+R24
+R25
+R26
+!i113 1
+R11
+R12
+Ctestbench
+etb
+atb_arch
+DEx4 work 6 togray 0 22 MRcJD[lEk7GeDTNVB1EU53
+DAx4 work 2 tb 7 tb_arch 22 aiEn=_Fo]^NGkBCYOT7B71
+R2
+R3
+R27
+w1543921229
+R0
+R21
+R22
+l0
+L35
+VInb:zQQdXBheB<nMA8YmC3
+!s100 G<ZI0f9gWiiN@QYURmKmB3
+R6
+32
+!s110 1543921249
+!i10b 1
+!s108 1543921249.000000
+R25
+R26
+!i113 1
+R11
+R12
+Ctestbench_for_andor
+eandor_tb
+aTB_ARCHITECTURE
+R13
+DAx4 work 8 andor_tb 15 tb_architecture 22 RX`h^R@5F^@XWCl?:`8hn3
+R2
+R3
+R19
+R14
+R0
+R15
+R16
+l0
+L98
+VTe50nG:6Q@hIUShcHUb161
+!s100 7Jo5KS2;0VzLfZcailn432
+R6
+32
+R7
+!i10b 1
+R8
+R17
+R18
+!i113 1
+R11
+R12
+Etogray
+Z28 w1543923594
+R2
+R3
+R0
+Z29 8C:/Users/LUFT-AQUILA/Documents/Atom/Ajou_Univ/Logic_Circuit/vhdl.vhd
+Z30 FC:/Users/LUFT-AQUILA/Documents/Atom/Ajou_Univ/Logic_Circuit/vhdl.vhd
+l0
+L4
+ViG>]b<lUC7l3mnCe6KNl21
+!s100 oRG]2Ri`4kNh;U]DXoG^R1
+R6
+32
+Z31 !s110 1543923605
+!i10b 1
+Z32 !s108 1543923605.000000
+Z33 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/LUFT-AQUILA/Documents/Atom/Ajou_Univ/Logic_Circuit/vhdl.vhd|
+Z34 !s107 C:/Users/LUFT-AQUILA/Documents/Atom/Ajou_Univ/Logic_Circuit/vhdl.vhd|
+!i113 1
+R11
+R12
+Acat
+R2
+R3
+Z35 DEx4 work 6 togray 0 22 iG>]b<lUC7l3mnCe6KNl21
+l15
+L11
+Z36 Va=F4F3dFEB8:T?;DcaRKV2
+Z37 !s100 h=R@YhYcdU2H:SW<8]6F@2
+R6
+32
+R31
+!i10b 1
+R32
+R33
+R34
+!i113 1
+R11
+R12
