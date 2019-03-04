@@ -1,0 +1,74 @@
+task main()
+{
+  int sensor1_max, sensor1_min, sensor2_max, sensor2_min, sensor1, sensor2;
+  int sensor1_max_Threshold, sensor1_min_Threshold, sensor2_max_Threshold, sensor2_min_Threshold;
+  int fwdFast, fwdSlow;
+
+  SetSensorType(IN_1, IN_TYPE_LIGHT_ACTIVE);
+  SetSensorType(IN_3, IN_TYPE_LIGHT_ACTIVE);
+
+  ClearScreen();
+  TextOut(0, 0, "Cal. RDY");
+  until(ButtonPressed(BTNCENTER));
+  ClearScreen();
+  TextOut(0, 0, "Cal. SRT");
+  Wait(500);
+
+  sensor1_max = sensor1_min = Sensor(IN_1);
+  sensor2_max = sensor2_min = Sensor(IN_3);
+
+  while(1)
+  {
+    int tmp1 = Sensor(IN_1), tmp2 = Sensor(IN_3);
+    if(tmp1 > sensor1_max)  sensor1_max = tmp1;
+    if(tmp1 < sensor1_min)  sensor1_min = tmp1;
+    if(tmp2 > sensor2_max)  sensor2_max = tmp2;
+    if(tmp2 < sensor2_min)  sensor2_min = tmp2;
+    if(ButtonPressed(BTNCENTER)) { break; }
+  }
+  ClearScreen();
+  TextOut(0, 16, "Cal. FIN");
+  TextOut(0, 8, "1Max:" + NumToStr(sensor1_max) + " Min:" + NumToStr(sensor1_min));
+  TextOut(0, 0, "2Max:" + NumToStr(sensor2_max) + " Min:" + NumToStr(sensor2_min));
+  Wait(500);
+  until(ButtonPressed(BTNCENTER));
+  Wait(500);
+  ClearScreen();
+  TextOut(0, 0, "Start in 2 sec");
+  Wait(1000);
+
+  for(int i = 2; i > 0; i--)
+  {
+    TextOut(0, 0, "CountDown: " + NumToStr(i) + " sec");
+    Wait(1000);
+  }
+
+  sensor1_max_Threshold = sensor1_max - 50;
+  sensor2_max_Threshold = sensor2_max - 50;
+
+  sensor1_min_Threshold = sensor1_min + 80;
+  sensor2_min_Threshold = sensor2_min + 80;
+
+  fwdFast = 40;
+  fwdSlow = 15;
+
+  ResetScreen();
+  while(1)
+  {
+    sensor1 = Sensor(IN_1);
+    sensor2 = Sensor(IN_3);
+    if((sensor1 > sensor1_max_Threshold) && (sensor2 > sensor2_max_Threshold)) OnFwd(OUT_AC, fwdFast);
+    if((sensor1 < sensor1_min_Threshold) && (sensor2 < sensor2_min_Threshold)) Coast(OUT_AC);
+
+    if((sensor1 > sensor1_max_Threshold) && (sensor2 < sensor2_min_Threshold))
+    {
+      OnFwd(OUT_A, fwdFast);
+      OnRev(OUT_C, fwdSlow);//Coast(OUT_C);
+    }
+    if((sensor2 > sensor2_max_Threshold) && (sensor1 < sensor1_min_Threshold))
+    {
+      OnFwd(OUT_C, fwdFast);
+      OnRev(OUT_A, fwdSlow);//Coast(OUT_A);
+    }
+  }
+}
