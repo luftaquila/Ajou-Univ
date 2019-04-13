@@ -47,7 +47,7 @@
 
 ## 2. 코드 분석
 ### 1. `main()`
-![main](/Electronics_Pragramming/과제1/images/main.png)  <br>
+![main](/Electronics_Pragramming/과제1/images/main.png)
 
 * * * * *
 
@@ -80,7 +80,7 @@ printf("최대 이동 횟수: %d\n\n", max_movement_count);
 * * * * *
 
 ### 2. `setBoard()`  
-![setBoard](/Electronics_Pragramming/과제1/images/setBoard.png)  <br>
+![setBoard](/Electronics_Pragramming/과제1/images/setBoard.png)
 
 * * * * *
 
@@ -103,7 +103,7 @@ for(int d = 0; d < max_depth; d++) {
 * * * * *
 
 ### 3. `playBoard()`  
-![playBoard](/Electronics_Pragramming/과제1/images/playBoard.png)  <br>
+![playBoard](/Electronics_Pragramming/과제1/images/playBoard.png)
 
 * * * * *
 
@@ -165,7 +165,7 @@ if(flag[0]) {
 * * * * *
 
 ### 4. `printBoard()`  
-![printBoard](/Electronics_Pragramming/과제1/images/printBoard.png)  <br>
+![printBoard](/Electronics_Pragramming/과제1/images/printBoard.png)
 
 * * * * *
 
@@ -184,7 +184,7 @@ printf("\n");
 
 ## 3. 실행 결과 분석
 ### I. 0회 이동
-![0 move](/Electronics_Pragramming/과제1/images/0 move.png)  <br>
+![0 move](/Electronics_Pragramming/과제1/images/0 move.png)
 첫 시작 칸인 `square_board[0][0]`의 값이 0이므로, 단 1회도 이동할 수 없다.  
 `playBoard()`의 첫 번째 호출에서  
 ```C
@@ -194,7 +194,7 @@ if(!square_board[width][depth]) return;
 따라서, 최대 이동 횟수는 0회가 된다.
 
 ### II. 1회 이동
-![1 move](/Electronics_Pragramming/과제1/images/1 move.png)  <br>
+![1 move](/Electronics_Pragramming/과제1/images/1 move.png)
 첫 시작 칸인 `square_board[0][0]`의 값이 6으로, 보드의 폭과 길이를 초과한다.  
 따라서 동전은 우측 또는 아래쪽으로 단 1회 이동할 수 있으며, 이동한 후 보드를 이탈해 게임이 종료된다.  
 <br>
@@ -208,7 +208,7 @@ else movement_count++;
 이후, 이동 가능한 방향 조사를 통과하지 못하므로 함수가 종료된다.
 
 ### III. 3회 이동
-![3 move](/Electronics_Pragramming/과제1/images/3 move.png)  <br>
+![3 move](/Electronics_Pragramming/과제1/images/3 move.png)
 1. 처음 시작 칸인 `square_board[0][0]`의 값이 1로, 우측 및 아래로 이동 가능하다.
 2. `max_movement_count`가 `1`이 된다.
 3. 따라서 이동 가능 방향 조사를 거친 `flag` 배열은 `[1, 1, 0, 1, 0]`이 된다.
@@ -227,4 +227,4 @@ else movement_count++;
 5. 따라서, 최대 이동 횟수는 `3`이 된다.  
 
 ### IV. 5회 이동
-![5 move](/Electronics_Pragramming/과제1/images/5 move.png)  <br>
+![5 move](/Electronics_Pragramming/과제1/images/5 move.png)
