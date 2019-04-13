@@ -181,7 +181,8 @@ printf("\n");
 
 ## 3. 실행 결과 분석
 ### I. 0회 이동
-![0move](/Electronics_Pragramming/과제1/images/0move.png)
+![0move](/Electronics_Pragramming/과제1/images/0move.png)  
+
 첫 시작 칸인 `square_board[0][0]`의 값이 0이므로, 단 1회도 이동할 수 없다.  
 `playBoard()`의 첫 번째 호출에서  
 ```C
@@ -191,7 +192,8 @@ if(!square_board[width][depth]) return;
 따라서, 최대 이동 횟수는 0회가 된다.
 
 ### II. 1회 이동
-![1move](/Electronics_Pragramming/과제1/images/1move.png)
+![1move](/Electronics_Pragramming/과제1/images/1move.png)  
+
 첫 시작 칸인 `square_board[0][0]`의 값이 6으로, 보드의 폭과 길이를 초과한다.  
 따라서 동전은 우측 또는 아래쪽으로 단 1회 이동할 수 있으며, 이동한 후 보드를 이탈해 게임이 종료된다.  
 <br>
@@ -205,7 +207,8 @@ else movement_count++;
 이후, 이동 가능한 방향 조사를 통과하지 못하므로 함수가 종료된다.
 
 ### III. 3회 이동
-![3move](/Electronics_Pragramming/과제1/images/3move.png)
+![3move](/Electronics_Pragramming/과제1/images/3move.png)  
+
 1. 처음 시작 칸인 `square_board[0][0]`의 값이 1로, 우측 및 아래로 이동 가능하다.
 2. `max_movement_count`가 `1`이 된다.
 3. 따라서 이동 가능 방향 조사를 거친 `flag` 배열은 `[1, 1, 0, 1, 0]`이 된다.
@@ -224,7 +227,8 @@ else movement_count++;
 5. 따라서, 최대 이동 횟수는 `3`이 된다.  
 
 ### IV. 5회 이동
-![5move](/Electronics_Pragramming/과제1/images/5move.png)
+![5move](/Electronics_Pragramming/과제1/images/5move.png)  
+
 앞선 예시들과 동일하게, 더이상 이동할 수 없을 때까지 재귀 호출을 반복한다.  
 이를 도식화하면 다음과 같다.  
 <br>
@@ -232,7 +236,8 @@ else movement_count++;
 <br>
 
 ### V. 무한 번 이동
-![-1move](/Electronics_Pragramming/과제1/images/-1move.png)
+![-1move](/Electronics_Pragramming/과제1/images/-1move.png)  
+
 1. 처음 시작 칸인 `square_board[0][0]`의 값이 3이므로, 우측 및 아래로 이동 가능하다.  
 2. `max_movement_count`가 `1`이 된다.  
 3. `playBoard(3, 0, 1)`과 `playBoard(0, 3, 1)`을 재귀 호출한다.  
