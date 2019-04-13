@@ -16,8 +16,7 @@
 
 ### 2. 프로그램 구조
 #### 1. 매크로 변수  
-1. `Width` : 보드의 행 길이 지정  
-2. `Depth` : 보드의 열 길이 지정  
+1. `Width`, `Depth` : 보드의 가로세로 폭 지정
 3. `MAX_MOVEMENT` : 이동 가능 횟수의 최대치 지정
 
 #### 2. 전역 변수  
@@ -28,15 +27,13 @@
 1. `setBoard(int max_width, int max_depth)`  
    보드의 크기에 맞게, 각 칸에 무작위 난수를 채워 넣어 보드를 생성한다.  
      * 반환형 : **void**
-     * `max_width` : 생성할 보드의 행 길이  
-     * `max_depth` : 생성할 보드의 열 길이
+     * `max_width`, `max_depth` : 생성할 보드의 가로세로 길이
      <br>
 
 2. `printBoard(int max_width, int max_depth)`  
    생성한 보드를 화면에 출력한다.  
      * 반환형 : **void**
-     * `max_width` : 생성할 보드의 행 길이  
-     * `max_depth` : 생성할 보드의 열 길이
+     * `max_width`, `max_depth` : 출력할 보드의 가로세로 길이  
      <br>
 
 3. `playBoard(int width, int depth, intmovement_count)`  
@@ -217,14 +214,20 @@ else movement_count++;
     `max_movement_count`가 `2`가 된다.  
     `square_board[1][0]`이 `3`이므로, 우측 및 아래쪽으로 이동 가능하다.  
     앞선 과정을 거쳐 `playBoard(4, 0, 2)`와 `playBoard(1, 3, 2)`가 재귀 호출된다.  
-      1. `playBoard(4, 0, 2)`  
-      `max_movement_count`가 `3`이 된다.  
-      `square_board[4][0]`이 `6`이므로, 모든 방향에서 보드를 초과하여 게임이 종료된다.
-      2. `playBoard(1, 3, 2)`  
-      `square_board[4][0]`이 `0`이므로, 게임이 종료된다.
-  2. `playBoard(0, 1, 1)`  
-  `square_board[0][1]`이 `0`이므로, 게임이 종료된다.
+        1. `playBoard(4, 0, 2)`  
+        `max_movement_count`가 `3`이 된다.  
+        `square_board[4][0]`이 `6`이므로, 모든 방향에서 보드를 초과하여 게임이 종료된다.  
+        2. `playBoard(1, 3, 2)`  
+        `square_board[1][3]`이 `0`이므로, 게임이 종료된다.  
+    2. `playBoard(0, 1, 1)`  
+    `square_board[0][1]`이 `0`이므로, 게임이 종료된다.  
 5. 따라서, 최대 이동 횟수는 `3`이 된다.  
 
 ### IV. 5회 이동
 ![5move](/Electronics_Pragramming/과제1/images/5move.png)
+앞선 예시들과 동일하게, 더이상 이동할 수 없을 때까지 재귀 호출을 반복한다.  
+이를 도식화하면 다음과 같다.  
+![Diagram](/Electronics_Pragramming/과제1/images/Diagram.png)
+
+## 4. 전체 코드
+![code](/Electronics_Pragramming/과제1/images/code.png)
