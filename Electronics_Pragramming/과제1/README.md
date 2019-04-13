@@ -49,6 +49,8 @@
 ### 1. `main()`
 ![main](/Electronics_Pragramming/과제1/images/main.png)  <br>
 
+* * * * *
+
 ```C
 setBoard(Width, Depth);
 ```
@@ -79,4 +81,69 @@ printf("최대 이동 횟수: %d\n\n", max_movement_count);
 
 ### 2. `setBoard()`  
 ![setBoard](/Electronics_Pragramming/과제1/images/setBoard.png)  <br>
-1. 
+
+* * * * *
+
+```C
+srand(time(NULL));
+```
+`rand` 함수의 시드값을 설정한다.
+
+* * * * *
+
+```C
+for(int d = 0; d < max_depth; d++) {
+  for(int w = 0; w < max_width; w++)
+   square_board[w][d] = rand() % 8;
+}
+```
+보드 배열 `square_board` 의 모든 요소에 대해 난수를 생성해 대입한다.  
+`rand() % 8`은 생성한 난수를 8로 나눈 나머지이므로 0 ~ 7 사이의 무작위 값이 된다.
+
+* * * * *
+
+### 3. `playBoard()`  
+![playBoard](/Electronics_Pragramming/과제1/images/playBoard.png)  <br>
+
+* * * * *
+
+```C
+char flag[5] = { 0, };
+```
+상하좌우 각 방향에 대해 이동 가능한지 여부를 저장하는 배열 `flag`를 선언하고 모든 요소를 0으로 초기화한다.
+* `flag[0]` : 해당 칸에서 이동 가능한 방향이 하나라도 존재하는지 여부를 저장한다.  
+0이면 이동 가능한 방향이 존재하지 않는다는 의미이다.  
+
+* `flag[1] ~ flag[4]` : 순서대로 오른쪽, 왼쪽, 아래, 위 방향으로 이동할 수 있는지 여부를 저장한다.
+
+* * * * *
+
+```C
+if(!square_board[width][depth]) return;
+else if(max_movement_count < 0) return;
+else movement_count++;
+```
+현재 동전이 위치한 칸의 숫자가 `0`이거나, 최대 이동 가능 횟수를 초과했다면 함수를 종료한다.  
+해당사항이 없다면, 1회 이동할 수 있다는 의미이므로 이동 횟수를 1회 증가시킨다.
+
+* * * * *
+
+```C
+if(movement_count > max_movement_count) max_movement_count = movement_count;
+if(movement_count > MAX_MOVEMENT) max_movement_count = -1;
+```
+현재 이동 횟수가 저장된 최대 이동 횟수보다 크다면, 최대 이동 횟수를 갱신한다.
+만약 현재 이동 횟수가 최대 이동 가능 횟수를 초과했다면, 최대 이동 횟수에 `-1` 을 저장한다.
+
+* * * * *
+
+```C
+	if(width + square_board[width][depth] < Width)	flag[0] = flag[1] = 1;
+	if(width - square_board[width][depth] >= 0)     flag[0] = flag[2] = 1;
+	if(depth + square_board[width][depth] < Depth)	flag[0] = flag[3] = 1;
+	if(depth - square_board[width][depth] >= 0)     flag[0] = flag[4] = 1;
+```
+상하좌우 각 방향으로 이동할 수 있는지 여부를 판단하고, 각 방향에 대한 이동 가능 여부를 `flag` 배열의 해당 요소에 저장한다.
+
+* * * * *
+
