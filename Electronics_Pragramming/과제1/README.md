@@ -252,6 +252,7 @@ if(movement_count > MAX_MOVEMENT) max_movement_count = -1;
 ```C
 else if(max_movement_count < 0) return;
 ```
-에 의해 종료되며 최대 이동 횟수로 -1을 출력한다
+에 의해 종료되며 최대 이동 횟수로 -1을 출력한다.  
+
 ## 4. 전체 코드
 ![code](/Electronics_Pragramming/과제1/images/code.png)
