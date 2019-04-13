@@ -48,7 +48,7 @@ void playBoard(int width, int depth, int movement_count) {
 	if(depth + square_board[width][depth] < Depth)	flag[0] = flag[3] = 1;
 	if(depth - square_board[width][depth] >= 0)			flag[0] = flag[4] = 1;
 
-	if(flag[0] && movement_count) {
+	if(flag[0]) {
 		if(flag[1]) playBoard(width + square_board[width][depth], depth, movement_count);
 		if(flag[2]) playBoard(width - square_board[width][depth], depth, movement_count);
 		if(flag[3]) playBoard(width, depth + square_board[width][depth], movement_count);
