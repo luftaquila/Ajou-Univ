@@ -138,12 +138,28 @@ if(movement_count > MAX_MOVEMENT) max_movement_count = -1;
 * * * * *
 
 ```C
-	if(width + square_board[width][depth] < Width)	flag[0] = flag[1] = 1;
-	if(width - square_board[width][depth] >= 0)     flag[0] = flag[2] = 1;
-	if(depth + square_board[width][depth] < Depth)	flag[0] = flag[3] = 1;
-	if(depth - square_board[width][depth] >= 0)     flag[0] = flag[4] = 1;
+if(width + square_board[width][depth] < Width)	flag[0] = flag[1] = 1;
+if(width - square_board[width][depth] >= 0)     flag[0] = flag[2] = 1;
+if(depth + square_board[width][depth] < Depth)	flag[0] = flag[3] = 1;
+if(depth - square_board[width][depth] >= 0)     flag[0] = flag[4] = 1;
 ```
-상하좌우 각 방향으로 이동할 수 있는지 여부를 판단하고, 각 방향에 대한 이동 가능 여부를 `flag` 배열의 해당 요소에 저장한다.
+상하좌우 각 방향으로 이동할 수 있는지 여부를 판단하고,  
+각 방향에 대한 이동 가능 여부를 `flag` 배열의 해당하는 요소에 저장한다.
 
 * * * * *
 
+```C
+if(flag[0]) {
+	if(flag[1]) playBoard(width + square_board[width][depth], depth, movement_count);
+	if(flag[2]) playBoard(width - square_board[width][depth], depth, movement_count);
+	if(flag[3]) playBoard(width, depth + square_board[width][depth], movement_count);
+	if(flag[4]) playBoard(width, depth - square_board[width][depth], movement_count);
+}
+```
+`flag[0]`이 참인지 판단해 이동 가능한 방향이 존재하는지 확인한다.  
+이동 가능한 방향이 하나라도 존재한다면, 각 방향에 대한 이동 가능 여부를 확인한다.  
+이후, 이동 가능한 모든 방향으로 동전의 위치를 갱신해 `playBoard` 함수를 재귀 호출한다.  
+<br>
+재귀 호출된 함수에서 다시 이동 가능 여부를 조사하므로, 더 이상 이동이 불가능할 때까지 재귀 호출이 이루어진다.  
+
+* * * * *
