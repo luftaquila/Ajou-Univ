@@ -39,7 +39,7 @@
      * `max_depth` : 생성할 보드의 열 길이
      <br>
 
-3. `playBoard(int width, int depth, int movement_count)`  
+3. `playBoard(int width, int depth, intmovement_count)`  
    규칙에 따라 동전을 움직여 게임을 실행한다.  
      * 반환형 : **void**
      * `width`, `depth` : 동전의 현재 좌표  
@@ -121,7 +121,7 @@ char flag[5] = { 0, };
 ```C
 if(!square_board[width][depth]) return;
 else if(max_movement_count < 0) return;
-else movement_count++;
+elsemovement_count++;
 ```
 현재 동전이 위치한 칸의 숫자가 `0`이거나, 최대 이동 가능 횟수를 초과했다면 함수를 종료한다.  
 해당사항이 없다면, 1회 이동할 수 있다는 의미이므로 이동 횟수를 1회 증가시킨다.
@@ -129,7 +129,7 @@ else movement_count++;
 * * * * *
 
 ```C
-if(movement_count > max_movement_count) max_movement_count = movement_count;
+if(movement_count > max_movement_count) max_movement_count =movement_count;
 if(movement_count > MAX_MOVEMENT) max_movement_count = -1;
 ```
 현재 이동 횟수가 저장된 최대 이동 횟수보다 크다면, 최대 이동 횟수를 갱신한다.  
@@ -150,10 +150,10 @@ if(depth - square_board[width][depth] >= 0)     flag[0] = flag[4] = 1;
 
 ```C
 if(flag[0]) {
-	if(flag[1]) playBoard(width + square_board[width][depth], depth, movement_count);
-	if(flag[2]) playBoard(width - square_board[width][depth], depth, movement_count);
-	if(flag[3]) playBoard(width, depth + square_board[width][depth], movement_count);
-	if(flag[4]) playBoard(width, depth - square_board[width][depth], movement_count);
+	if(flag[1]) playBoard(width + square_board[width][depth], depth,movement_count);
+	if(flag[2]) playBoard(width - square_board[width][depth], depth,movement_count);
+	if(flag[3]) playBoard(width, depth + square_board[width][depth],movement_count);
+	if(flag[4]) playBoard(width, depth - square_board[width][depth],movement_count);
 }
 ```
 `flag[0]`이 참인지 판단해 이동 가능한 방향이 존재하는지 확인한다.  
@@ -184,7 +184,7 @@ printf("\n");
 
 ## 3. 실행 결과 분석
 ### I. 0회 이동
-![0 move](/Electronics_Pragramming/과제1/images/0 move.png)
+![0move](/Electronics_Pragramming/과제1/images/0move.png)
 첫 시작 칸인 `square_board[0][0]`의 값이 0이므로, 단 1회도 이동할 수 없다.  
 `playBoard()`의 첫 번째 호출에서  
 ```C
@@ -194,7 +194,7 @@ if(!square_board[width][depth]) return;
 따라서, 최대 이동 횟수는 0회가 된다.
 
 ### II. 1회 이동
-![1 move](/Electronics_Pragramming/과제1/images/1 move.png)
+![1move](/Electronics_Pragramming/과제1/images/1move.png)
 첫 시작 칸인 `square_board[0][0]`의 값이 6으로, 보드의 폭과 길이를 초과한다.  
 따라서 동전은 우측 또는 아래쪽으로 단 1회 이동할 수 있으며, 이동한 후 보드를 이탈해 게임이 종료된다.  
 <br>
@@ -202,13 +202,13 @@ if(!square_board[width][depth]) return;
 ```C
 if(!square_board[width][depth]) return;
 else if(max_movement_count < 0) return;
-else movement_count++;
+elsemovement_count++;
 ```
 에 따라 해당되는 조건이 없으므로 이동 횟수가 1회 증가한다.  
 이후, 이동 가능한 방향 조사를 통과하지 못하므로 함수가 종료된다.
 
 ### III. 3회 이동
-![3 move](/Electronics_Pragramming/과제1/images/3 move.png)
+![3move](/Electronics_Pragramming/과제1/images/3move.png)
 1. 처음 시작 칸인 `square_board[0][0]`의 값이 1로, 우측 및 아래로 이동 가능하다.
 2. `max_movement_count`가 `1`이 된다.
 3. 따라서 이동 가능 방향 조사를 거친 `flag` 배열은 `[1, 1, 0, 1, 0]`이 된다.
@@ -227,4 +227,4 @@ else movement_count++;
 5. 따라서, 최대 이동 횟수는 `3`이 된다.  
 
 ### IV. 5회 이동
-![5 move](/Electronics_Pragramming/과제1/images/5 move.png)
+![5move](/Electronics_Pragramming/과제1/images/5move.png)
