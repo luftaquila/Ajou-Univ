@@ -163,3 +163,19 @@ if(flag[0]) {
 재귀 호출된 함수에서 다시 이동 가능 여부를 조사하므로, 더 이상 이동이 불가능할 때까지 재귀 호출이 이루어진다.  
 
 * * * * *
+
+### 4. `printBoard()`  
+![printBoard](/Electronics_Pragramming/과제1/images/printBoard.png)  <br>
+
+* * * * *
+
+```C
+for (int d = 0; d < max_depth; d++) {
+  for (int w = 0; w < max_width; w++)
+    printf("%2d", square_board[w][d]);
+  printf("\n");
+}
+printf("\n");
+```
+`square_board` 2차원 배열의 구조를 그대로 화면에 출력한다.  
+한 행의 출력이 끝나면 한 줄을 개행한다.
