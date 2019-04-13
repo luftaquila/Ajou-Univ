@@ -43,7 +43,6 @@ void playBoard(int width, int depth, int movement_count) {
 	if(movement_count > max_movement_count) max_movement_count = movement_count;
 	if(movement_count > MAX_MOVEMENT) max_movement_count = -1;
 
-	//상하좌우 이동 가능 여부 조사
 	if(width + square_board[width][depth] < Width)	flag[0] = flag[1] = 1;
 	if(width - square_board[width][depth] >= 0) 		flag[0] = flag[2] = 1;
 	if(depth + square_board[width][depth] < Depth)	flag[0] = flag[3] = 1;
