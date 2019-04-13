@@ -49,33 +49,33 @@
 ### 1. `main()`
 ![main](/Electronics_Pragramming/과제1/images/main.png)  <br>
 
-* * * * *
-
 ```C
 setBoard(Width, Depth);
 ```
-* `setBoard` 함수를 호출해 난수 보드를 생성한다.  
+`setBoard` 함수를 호출해 난수 보드를 생성한다.  
 
 * * * * *
 
 ```C
 printBoard(Width, Depth);
 ```
-* `printBoard` 함수를 호출해 생성한 보드를 화면에 출력한다.
+`printBoard` 함수를 호출해 생성한 보드를 화면에 출력한다.
 
 * * * * *
 
 ```C
 playBoard(0, 0, 0);
 ```
-* `playBoard` 함수를 호출해 시작 위치를 `0, 0`으로 지정하고, 게임을 시작한다.
+`playBoard` 함수를 호출해 시작 위치를 `0, 0`으로 지정하고, 게임을 시작한다.
 
 * * * * *
 
 ```C
 printf("최대 이동 횟수: %d\n\n", max_movement_count);
 ```
-* `printf` 함수를 통해 최대 이동 횟수를 출력하고, 프로그램을 종료한다.
+`printf` 함수를 통해 최대 이동 횟수를 출력하고, 프로그램을 종료한다.
+
+* * * * *
 
 ### 2. `setBoard()`  
 ![setBoard](/Electronics_Pragramming/과제1/images/setBoard.png)  <br>
