@@ -202,7 +202,7 @@ if(!square_board[width][depth]) return;
 ```C
 if(!square_board[width][depth]) return;
 else if(max_movement_count < 0) return;
-elsemovement_count++;
+else movement_count++;
 ```
 에 따라 해당되는 조건이 없으므로 이동 횟수가 1회 증가한다.  
 이후, 이동 가능한 방향 조사를 통과하지 못하므로 함수가 종료된다.
@@ -213,15 +213,15 @@ elsemovement_count++;
 2. `max_movement_count`가 `1`이 된다.
 3. 따라서 이동 가능 방향 조사를 거친 `flag` 배열은 `[1, 1, 0, 1, 0]`이 된다.
 4. `flag[1]`과 `flag[3]`이 참이므로, `playBoard(1, 0, 1)`과 `playBoard(0, 1, 1)`이 재귀 호출된다.
-  1. `playBoard(1, 0, 1)`  
-  `max_movement_count`가 `2`가 된다.  
-  `square_board[1][0]`이 `3`이므로, 우측 및 아래쪽으로 이동 가능하다.  
-  앞선 과정을 거쳐 `playBoard(4, 0, 2)`와 `playBoard(1, 3, 2)`가 재귀 호출된다.  
-    1. `playBoard(4, 0, 2)`  
-    `max_movement_count`가 `3`이 된다.  
-    `square_board[4][0]`이 `6`이므로, 모든 방향에서 보드를 초과하여 게임이 종료된다.
-    2. `playBoard(1, 3, 2)`  
-    `square_board[4][0]`이 `0`이므로, 게임이 종료된다.
+    1. `playBoard(1, 0, 1)`  
+    `max_movement_count`가 `2`가 된다.  
+    `square_board[1][0]`이 `3`이므로, 우측 및 아래쪽으로 이동 가능하다.  
+    앞선 과정을 거쳐 `playBoard(4, 0, 2)`와 `playBoard(1, 3, 2)`가 재귀 호출된다.  
+      1. `playBoard(4, 0, 2)`  
+      `max_movement_count`가 `3`이 된다.  
+      `square_board[4][0]`이 `6`이므로, 모든 방향에서 보드를 초과하여 게임이 종료된다.
+      2. `playBoard(1, 3, 2)`  
+      `square_board[4][0]`이 `0`이므로, 게임이 종료된다.
   2. `playBoard(0, 1, 1)`  
   `square_board[0][1]`이 `0`이므로, 게임이 종료된다.
 5. 따라서, 최대 이동 횟수는 `3`이 된다.  
