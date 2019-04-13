@@ -118,7 +118,7 @@ char flag[5] = { 0, };
 ```C
 if(!square_board[width][depth]) return;
 else if(max_movement_count < 0) return;
-elsemovement_count++;
+else movement_count++;
 ```
 현재 동전이 위치한 칸의 숫자가 `0`이거나, 최대 이동 가능 횟수를 초과했다면 함수를 종료한다.  
 해당사항이 없다면, 1회 이동할 수 있다는 의미이므로 이동 횟수를 1회 증가시킨다.
@@ -227,7 +227,31 @@ else movement_count++;
 ![5move](/Electronics_Pragramming/과제1/images/5move.png)
 앞선 예시들과 동일하게, 더이상 이동할 수 없을 때까지 재귀 호출을 반복한다.  
 이를 도식화하면 다음과 같다.  
+<br>
 ![Diagram](/Electronics_Pragramming/과제1/images/Diagram.png)
+<br>
 
+### V. 무한 번 이동
+![-1move](/Electronics_Pragramming/과제1/images/-1move.png)
+1. 처음 시작 칸인 `square_board[0][0]`의 값이 3이므로, 우측 및 아래로 이동 가능하다.  
+2. `max_movement_count`가 `1`이 된다.  
+3. `playBoard(3, 0, 1)`과 `playBoard(0, 3, 1)`을 재귀 호출한다.  
+    1. `playBoard(3, 0, 1)`  
+    `square_board[3][0]`이 `7`이므로, 모든 방향에서 보드를 초과하여 게임이 종료된다.  
+    2. `playBoard(0, 3, 1)`  
+    `square_board[0][3]`이 `2`이므로, 우측 및 위로 이동 가능하다.  
+    `playBoard(0, 1, 2)`와 `playBoard(2, 3, 2)`을 재귀 호출한다.  
+      
+이 때, `playBoard(0, 1, 2)`의 값이 `1`이므로, 동전은 처음 시작점인 `square_board[0][0]`로 다시 돌아올 수 있다.  
+따라서 동전이 위의 코스를 순환하며 끊임없이 움직일 수 있게 된다.  
+위 과정을 반복하면서 `movement_count`가 1씩 증가하다가, 25를 초과하는 순간 아래 코드
+```C
+if(movement_count > MAX_MOVEMENT) max_movement_count = -1;
+```
+에 의해 `max_movement_count`에 `-1`이 저장되고, 다음 재귀 호출 시 
+```C
+else if(max_movement_count < 0) return;
+```
+에 의해 종료되며 최대 이동 횟수로 -1을 출력한다
 ## 4. 전체 코드
 ![code](/Electronics_Pragramming/과제1/images/code.png)
