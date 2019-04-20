@@ -68,23 +68,21 @@ void printMenu() {
 
 void insertMemo(MEMO *memo, int *nMemo) {
 	char hashInput[MAX_LENGTH_HASHTAG + 1], *token;
+	memo[*nMemo].nHashtag = 0;
 	printf("Write the Memo : ");
 	gets(memo[*nMemo].text);
 	printf("Write the Hashtag : ");
 	gets(hashInput);
 	if(strlen(hashInput)) {
 		token = strtok(hashInput, "#");
-		strcpy(memo[*nMemo].hashtag[0], token);
-		memo[*nMemo].nHashtag = 1;
 		while(token) {
 			strcpy(memo[*nMemo].hashtag[memo[*nMemo].nHashtag++], token);
 			token = strtok(NULL, "#");
 		}
 	}
-	else memo[*nMemo].nHashtag = 0;
 	printf("Num Memo / Hashtag\n");
 	printf("\t%d %s\n\t", *nMemo + 1, memo[*nMemo].text);
-	for(int i = 1; i < memo[*nMemo].nHashtag; i++)
+	for(int i = 0; i < memo[*nMemo].nHashtag; i++)
 		printf("#%s ", memo[*nMemo].hashtag[i]);
 	printf("\n\n");
 	(*nMemo)++;
@@ -96,7 +94,7 @@ void printAllMemo(MEMO *memo, int nMemo) {
 	printf("Num Memo / Hashtag\n");
 	for(int i = 0; i < nMemo; i++) {
 		printf("\t%d %s\n\t", i + 1, memo[i].text);
-		for(int j = 1; j < memo[i].nHashtag; j++)
+		for(int j = 0; j < memo[i].nHashtag; j++)
 			printf("#%s ", memo[i].hashtag[j]);
 		printf("\n\n");
 	}
@@ -109,10 +107,10 @@ void searchByHashtag(MEMO *memo, int nMemo) {
 	scanf("%s", schQuery);
 	printf("\nNum Memo / Hashtag\n");
 	for(int i = 0; i < nMemo; i++) {
-		for(int j = 1; j < memo[i].nHashtag; j++) {
+		for(int j = 0; j < memo[i].nHashtag; j++) {
 			if(!strcmp(schQuery, memo[i].hashtag[j])) {
 				printf("\t%d %s\n\t", i + 1, memo[i].text);
-				for(int k = 1; k < memo[i].nHashtag; k++)
+				for(int k = 0; k < memo[i].nHashtag; k++)
 					printf("#%s ", memo[i].hashtag[k]);
 				printf("\n\n");
 			}
