@@ -69,16 +69,19 @@ void printMenu() {
 void insertMemo(MEMO *memo, int *nMemo) {
 	char hashInput[MAX_LENGTH_HASHTAG + 1], *token;
 	printf("Write the Memo : ");
-	scanf("%s", memo[*nMemo].text);
+	gets(memo[*nMemo].text);
 	printf("Write the Hashtag : ");
-	scanf("%s", hashInput);
-	token = strtok(hashInput, "#");
-	strcpy(memo[*nMemo].hashtag[0], token);
-	memo[*nMemo].nHashtag = 1;
-	while(token) {
-		strcpy(memo[*nMemo].hashtag[memo[*nMemo].nHashtag++], token);
-		token = strtok(NULL, "#");
+	gets(hashInput);
+	if(strlen(hashInput)) {
+		token = strtok(hashInput, "#");
+		strcpy(memo[*nMemo].hashtag[0], token);
+		memo[*nMemo].nHashtag = 1;
+		while(token) {
+			strcpy(memo[*nMemo].hashtag[memo[*nMemo].nHashtag++], token);
+			token = strtok(NULL, "#");
+		}
 	}
+	else memo[*nMemo].nHashtag = 0;
 	printf("Num Memo / Hashtag\n");
 	printf("\t%d %s\n\t", *nMemo + 1, memo[*nMemo].text);
 	for(int i = 1; i < memo[*nMemo].nHashtag; i++)
