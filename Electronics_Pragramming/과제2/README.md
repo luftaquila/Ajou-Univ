@@ -301,7 +301,10 @@ if(!strcmp(schQuery, memo[i].hashtag[j]))
 
 ### V. 해시태그 미입력
 ![no_hashtag](/Electronics_Pragramming/과제2/images/no_hashtag.png)  
+<<<<<<< HEAD
 
+=======
+>>>>>>> 24fc856e54bc798f655294e697050e82a110c7e8
 사양서의 해시태그의 최소 입력 개수가 0개이므로, 해시태그를 입력하지 않으면
 ``` C
 if(strlen(hashInput))
