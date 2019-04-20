@@ -3,25 +3,17 @@
 #include <string.h>
 #include <stdlib.h>
 
-
-//메모와 해시태그의 최대 개수 및 길이 정의
 #define MAX_COUNT_MEMO 100
 #define MAX_LENGTH_TEXT 200
 #define MAX_COUNT_HASHTAG 100
 #define MAX_LENGTH_HASHTAG 30
 
-//메모 구조체
 typedef struct {
-	char text[MAX_LENGTH_TEXT+1];
-	char hashtag[MAX_COUNT_HASHTAG][MAX_LENGTH_HASHTAG+1];
+	char text[MAX_LENGTH_TEXT + 1];
+	char hashtag[MAX_COUNT_HASHTAG][MAX_LENGTH_HASHTAG + 1];
 	int nHashtag;
 }MEMO;
 
-/*
-함수 정의
-매개변수 memo : 메모를 저장하는 배열의 시작 주소
-         nMemo : 현재 저장된 메모의 개수 or 해당 변수의 주소
-*/
 void printMenu();
 void insertMemo(MEMO *memo, int *nMemo);
 void printAllMemo(MEMO *memo, int nMemo);
@@ -39,8 +31,7 @@ int main(void) {
 		gets(temp);
 		menu = atoi(temp);
 		printf("\n");
-		switch (menu)
-		{
+		switch (menu) {
 		case 1:
 			insertMemo(memo, &nMemo);
 			break;
@@ -61,12 +52,10 @@ int main(void) {
 			break;
 		}
 	} while (menu != 0);
-
 	return 0;
 }
 
 void printMenu() {
-	//메뉴 출력 함수
 	printf("********** Menu **********\n");
 	printf("1. Insert\n");
 	printf("2. Print All Memo\n");
@@ -78,49 +67,65 @@ void printMenu() {
 }
 
 void insertMemo(MEMO *memo, int *nMemo) {
-	/*
-	메모 생성 함수
-	생성자에게서 메모 내용과 #으로 구분된 해시태그를 입력 받음
-	해시태그는 #을 기준으로 나누어 저장, #은 저장하지 않음
-	입력 받은 메모를 출력
-	ex) 메모 입력     : 메모 입력 테스트
-	해시태그 입력 : #해시태그#입력#테스트
-
-	저장된 메모     : "메모 입력 테스트"
-	저장된 해시태그 : {"해시태그","입력","테스트"}
-
-	출력
-	Num Memo / Hashtag
-	  1 메모 입력 테스트
-	    #해시태그 #입력 #테스트
-	*/
+	char hashInput[MAX_LENGTH_HASHTAG + 1], *token;
+	printf("Write the Memo : ");
+	scanf("%s", memo[*nMemo].text);
+	printf("Write the Hashtag : ");
+	scanf("%s", hashInput);
+	token = strtok(hashInput, "#");
+	strcpy(memo[*nMemo].hashtag[0], token);
+	memo[*nMemo].nHashtag = 1;
+	while(token) {
+		strcpy(memo[*nMemo].hashtag[memo[*nMemo].nHashtag++], token);
+		token = strtok(NULL, "#");
+	}
+	printf("Num Memo / Hashtag\n");
+	printf("\t%d %s\n\t", *nMemo + 1, memo[*nMemo].text);
+	for(int i = 1; i < memo[*nMemo].nHashtag; i++)
+		printf("#%s ", memo[*nMemo].hashtag[i]);
+	printf("\n\n");
+	(*nMemo)++;
+	rewind(stdin);
 	return;
 }
 
 void printAllMemo(MEMO *memo, int nMemo) {
-	/*
-	현재 저장된 모든 메모 출력 함수
-	Num Memo / Hashtag 형태로 출력
-	Num은 메모의 번호, 1부터 시작
-	해시태그는 #을 붙여서 출력
-	*/
+	printf("Num Memo / Hashtag\n");
+	for(int i = 0; i < nMemo; i++) {
+		printf("\t%d %s\n\t", i + 1, memo[i].text);
+		for(int j = 1; j < memo[i].nHashtag; j++)
+			printf("#%s ", memo[i].hashtag[j]);
+		printf("\n\n");
+	}
 	return;
 }
 
 void searchByHashtag(MEMO *memo, int nMemo) {
-	/*
-	해시태그로 메모 검색하는 함수
-	검색할 때 입력받는 해시태그는 #을 포함하지 않음
-	Num Memo / Hashtag 형태로 출력
-	*/
+	char schQuery[MAX_LENGTH_HASHTAG + 1];
+	printf("Input Hashtag : ");
+	scanf("%s", schQuery);
+	printf("\nNum Memo / Hashtag\n");
+	for(int i = 0; i < nMemo; i++) {
+		for(int j = 1; j < memo[i].nHashtag; j++) {
+			if(!strcmp(schQuery, memo[i].hashtag[j])) {
+				printf("\t%d %s\n\t", i + 1, memo[i].text);
+				for(int k = 1; k < memo[i].nHashtag; k++)
+					printf("#%s ", memo[i].hashtag[k]);
+				printf("\n\n");
+			}
+		}
+	}
+	rewind(stdin);
 	return;
 }
 
 void deleteMemo(MEMO *memo, int *nMemo) {
-	/*
-	메모의 Num을 입력 받아 메모를 삭제하는 함수
-	printAllMemo 에서 출력되는 Num을 이용해 메모를 삭제
-	삭제된 메모보다 뒤에 있는 메모를 앞으로 한칸씩 이동하여 저장한다.
-	*/
+	int delQuery;
+	printf("Input Num : ");
+	scanf("%d", &delQuery);
+	for(int i = delQuery; i < *nMemo; i++)
+		memcpy(&memo[i - 1], &memo[i], sizeof(MEMO));
+	(*nMemo)--;
+	rewind(stdin);
 	return;
 }
