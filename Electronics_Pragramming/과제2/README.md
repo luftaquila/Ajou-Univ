@@ -136,7 +136,7 @@ gets(memo[*nMemo].text);
 printf("Write the Hashtag : ");
 gets(hashInput);
 ```
-메모를 입력받아 `memo` 구조체 배열에서 마지막으로 입력받은 요소의 다음 요소의 `text` 멤버에 저장한다.
+메모를 입력받아 `memo` 구조체 배열에서 마지막으로 입력받은 요소의 다음 요소의 `text` 멤버에 저장한다.  
 띄어쓰기 입력 지원을 위해 `printf`가 아닌 `gets` 함수를 통해 한 줄 입력을 받는다.
 
 * * * * *
@@ -151,8 +151,8 @@ if(strlen(hashInput)) {
 }
 ```
 해시태그 입력이 존재할 때만, 문자열을 # 단위로 분리한다.  
-분리한 문자열을 `memo`의  `hashtag` 멤버 배열에 차례로 저장하며, 해시태그 개수를 저장한다..  
-더 이상 분리가 불가능할 때가지 진행한다.
+분리한 문자열을 `memo`의  `hashtag` 멤버 배열에 차례로 저장하며, 해시태그 개수를 저장한다.  
+더 이상 분리가 불가능할 때까지 진행한다.
 
 * * * * *
 
@@ -301,8 +301,7 @@ if(!strcmp(schQuery, memo[i].hashtag[j]))
 
 ### V. 해시태그 미입력
 ![no_hashtag](/Electronics_Pragramming/과제2/images/no_hashtag.png)  
-
-해시태그를 입력하지 않으면,
+사양서의 해시태그의 최소 입력 개수가 0개이므로, 해시태그를 입력하지 않으면
 ``` C
 if(strlen(hashInput))
 ```
