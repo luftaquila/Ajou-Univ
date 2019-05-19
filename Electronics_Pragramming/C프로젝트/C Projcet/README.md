@@ -369,9 +369,6 @@ void setWordList(WORD_LIST * wordList) {
 `정지` 명령어를 입력하면 화면의 모든 단어가 낙하를 중지하고, 새 낙하 단어를 생성하지 않는다.
 
 ### VII. 게임 종료
-![end](/Electronics_Pragramming/C프로젝트/images/end.png)  
+![dead](/Electronics_Pragramming/C프로젝트/images/dead.png)  
 
 체력이 0이 되면 게임을 종료한다.
-
-## 4. 전체 코드
-![code](/Electronics_Pragramming/C프로젝트/images/code.png)
