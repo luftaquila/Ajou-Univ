@@ -435,8 +435,7 @@ int main(void) {
 						pthread_cancel(thread);
 						/////////////////////////////////
 						remainLife--;
-						removeRaindropFromList(&raindropList, itr);							//일치한 단어 리스트에서 삭제
-						//raindropList.raindrops[itr].y = 0;
+						removeRaindropFromList(&raindropList, itr);
 					}
 					else printWord(raindropList.raindrops[itr].x, raindropList.raindrops[itr].y, raindropList.raindrops[itr].word, raindropList.raindrops[itr].isBonus);
 				}
