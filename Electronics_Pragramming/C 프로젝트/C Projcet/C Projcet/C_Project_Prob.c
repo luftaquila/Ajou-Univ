@@ -448,7 +448,7 @@ int main(void) {
 				addRaindrop(&raindropList, wordList, currentTime);
 			}
 		}
-		else if (currentTime - pauseStart > 3000) {
+		else if (currentTime - pauseStart > PAUSE_TIME) {
 			isPause = !isPause;
 		}
 
