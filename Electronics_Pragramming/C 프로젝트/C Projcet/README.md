@@ -34,12 +34,12 @@
 
 #### 2. 구현 기능 관련 구조체
 1. RAINDROP  
-  1. char* `word` : 단어 텍스트 저장
-  1. int `x`, `y` : 단어 위치 좌표
-  1. int `length` : 단어 길이
-  1. int `period` : 단어 갱신주기
-  1. clock_t `lastUpdatedTime` : 최신 갱신 시간
-  1. char `isBonus` : 체력 회복 여부 → 추가 기능에 이용
+    1. char* `word` : 단어 텍스트 저장
+    1. int `x`, `y` : 단어 위치 좌표
+    1. int `length` : 단어 길이
+    1. int `period` : 단어 갱신주기
+    1. clock_t `lastUpdatedTime` : 최신 갱신 시간
+    1. char `isBonus` : 체력 회복 여부 → 추가 기능에 이용
 
   1. RAINDROP_LIST  
     1. RAINDROP `raindrops` : 화면에 존재하는 단어 목록  
