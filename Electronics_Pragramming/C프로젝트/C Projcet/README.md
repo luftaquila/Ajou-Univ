@@ -339,39 +339,39 @@ void setWordList(WORD_LIST * wordList) {
 
 ## 3. 실행 결과 분석
 ### I. 단어 빗방울 강하
-![drop](/Electronics_Pragramming/C 프로젝트/images/drop.png)  
+![drop](/Electronics_Pragramming/C프로젝트/images/drop.png)  
 
 게임을 시작하면 단어가 떨어지기 시작한다.
 
 ### II. 단어 제거
-![catch](/Electronics_Pragramming/C 프로젝트/images/catch.png)  
+![catch](/Electronics_Pragramming/C프로젝트/images/catch.png)  
 
 화면에 낙하하는 단어와 일치하는 단어를 입력하면 해당 단어를 제거한다.
 
 ### III. 폭탄 기능
-![bomb](/Electronics_Pragramming/C 프로젝트/images/bomb.png)  
+![bomb](/Electronics_Pragramming/C프로젝트/images/bomb.png)  
 
 `폭탄` 명령어를 입력하면 화면의 모든 단어를 제거하나, 점수는 증가하지 않는다.
 
 ### IV. 체력 감소
-![health](/Electronics_Pragramming/C 프로젝트/images/health.png)  
+![health](/Electronics_Pragramming/C프로젝트/images/health.png)  
 
 단어가 화면 하단에 닿으면 체력이 1 줄고, 체력 인디케이터가 감소한다.
 
 ### V. 체력 회복
-![heal](/Electronics_Pragramming/C 프로젝트/images/heal.png)  
+![heal](/Electronics_Pragramming/C프로젝트/images/heal.png)  
 
 초록색으로 표시되는 체력 회복 단어를 입력하면, 체력을 1 회복하고 체력 인디케이터가 증가한다.
 
 ### VI. 낙하 중지
-![pause](/Electronics_Pragramming/C 프로젝트/images/pause.png)  
+![pause](/Electronics_Pragramming/C프로젝트/images/pause.png)  
 
 `정지` 명령어를 입력하면 화면의 모든 단어가 낙하를 중지하고, 새 낙하 단어를 생성하지 않는다.
 
 ### VII. 게임 종료
-![end](/Electronics_Pragramming/C 프로젝트/images/end.png)  
+![end](/Electronics_Pragramming/C프로젝트/images/end.png)  
 
 체력이 0이 되면 게임을 종료한다.
 
 ## 4. 전체 코드
-![code](/Electronics_Pragramming/C 프로젝트/images/code.png)
+![code](/Electronics_Pragramming/C프로젝트/images/code.png)
