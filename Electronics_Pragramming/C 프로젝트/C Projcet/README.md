@@ -237,7 +237,24 @@ wait(2);
 ### 3. `removeRaindropFromList()`  
 
 * * * * *
+```C
+void removeRaindropFromList(RAINDROP_LIST * raindropList, int idx) {
+	int itr;
+	free(raindropList->raindrops[idx].word);
+	for (itr = idx; itr < raindropList->cntRaindrop - 1; itr++)
+	{
+		raindropList->raindrops[itr].lastUpdatedTime = raindropList->raindrops[itr + 1].lastUpdatedTime;
+		raindropList->raindrops[itr].length = raindropList->raindrops[itr + 1].length;
+		raindropList->raindrops[itr].period = raindropList->raindrops[itr + 1].period;
+		raindropList->raindrops[itr].x = raindropList->raindrops[itr + 1].x;
+		raindropList->raindrops[itr].y = raindropList->raindrops[itr + 1].y;
+		raindropList->raindrops[itr].word = raindropList->raindrops[itr + 1].word;
+		raindropList->raindrops[itr].isBonus = raindropList->raindrops[itr + 1].isBonus;
+	}
+	raindropList->cntRaindrop--;
+}
 
+```
 1. 전달받은 인덱스의 포인터 메모리를 할당 해제한다.
 1. 전달받은 인덱스부터 (저장된 최대 인덱스 - 1)까지의 모든 요소에 대하여, 한 칸씩 인덱스를 앞으로 당긴다.
 1. 저장된 최대 인덱스를 1 감소시킨다.
@@ -250,6 +267,28 @@ raindropList->raindrops[itr].isBonus = raindropList->raindrops[itr + 1].isBonus;
 
 
 ### 4. `addRaindrop()`  
+```C
+void addRaindrop(RAINDROP_LIST * raindropList, WORD_LIST wordList, clock_t time) {
+	int idx, tempInt;
+	idx = rand() % wordList.cntWord;
+	raindropList->raindrops[raindropList->cntRaindrop].lastUpdatedTime = time;
+	raindropList->raindrops[raindropList->cntRaindrop].period = rand() % (DROP_PERIOD_MAX - DROP_PERIOD_MIN + 1) + DROP_PERIOD_MIN;
+	raindropList->raindrops[raindropList->cntRaindrop].x = rand() % MAX_X + 1;
+	raindropList->raindrops[raindropList->cntRaindrop].y = MIN_Y;
+	raindropList->raindrops[raindropList->cntRaindrop].isBonus = ((rand() % 5) == 3);
+
+
+	tempInt = strlen(wordList.words[idx]);
+	raindropList->raindrops[raindropList->cntRaindrop].word = (char*)malloc(sizeof(char) * tempInt + 1);
+	strcpy(raindropList->raindrops[raindropList->cntRaindrop].word, wordList.words[idx]);
+	raindropList->raindrops[raindropList->cntRaindrop].length = tempInt;
+	raindropList->cntRaindrop++;
+}
+
+int calculateScore(RAINDROP raindrop, int speed) {
+	return (speed * (DROP_PERIOD_MAX - raindrop.period + 100)) / 100;
+}
+```
 1. 저장된 단어 목록 중 한 개의 인덱스를 무작위로 선택한다.
 1. 단어 목록의 마지막 인덱스의 요소에 값을 저장한다.
   * lastUpdatedTime 에 현재 시간을 저장한다.
@@ -268,7 +307,28 @@ raindropList->raindrops[raindropList->cntRaindrop].isBonus = ((rand() % 5) == 3)
 
 
 ### 5. `setWordList()`  
+```C
+void setWordList(WORD_LIST * wordList) {
+	FILE* fp;
+	int itr;
+	int tempInt;
+	char tempString[MAX_LENGTH_OF_STRING + 1];
 
+	fp = fopen(FILE_NAME, "r");
+	fscanf(fp, "%d", &wordList->cntWord);
+	wordList->words = (char**)malloc(sizeof(char*) * wordList->cntWord);
+	for (itr = 0; itr < wordList->cntWord; itr++)
+	{
+		fscanf(fp, "%s", tempString);
+		tempInt = strlen(tempString);
+		wordList->words[itr] = (char*)malloc(sizeof(char) * tempInt + 1);
+		strcpy(wordList->words[itr], tempString);
+	}
+	fclose(fp);
+	return;
+}
+
+```
 * * * * *
 1. 단어 목록이 저장된 파일을 읽기 모드로 연다.
 1. 맨 첫 줄에 있는 단어의 개수를 읽어와 `wordList`의 `cntWord`에 저장한다.
