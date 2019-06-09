@@ -1,0 +1,21 @@
+C:/Users/LUFT-AQUILA/Dropbox/Atom/Ajou_Univ/Logic_Circuit/Kwak/test.vhd {0 {vcom -work work -2008 -explicit -stats=none C:/Users/LUFT-AQUILA/Dropbox/Atom/Ajou_Univ/Logic_Circuit/Kwak/test.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Compiling entity project
+-- Compiling architecture paritycheck of project
+** Error: C:/Users/LUFT-AQUILA/Dropbox/Atom/Ajou_Univ/Logic_Circuit/Kwak/test.vhd(17): Target of signal assignment is not a signal.
+** Error: C:/Users/LUFT-AQUILA/Dropbox/Atom/Ajou_Univ/Logic_Circuit/Kwak/test.vhd(19): near ":=": (vcom-1576) expecting ')'.
+** Error: C:/Users/LUFT-AQUILA/Dropbox/Atom/Ajou_Univ/Logic_Circuit/Kwak/test.vhd(27): VHDL Compiler exiting
+
+} {9.0 12.0} {}} C:/Users/LUFT-AQUILA/Dropbox/Atom/Ajou_Univ/Logic_Circuit/Kwak/test_TB.vhd {1 {vcom -work work -2008 -explicit -stats=none C:/Users/LUFT-AQUILA/Dropbox/Atom/Ajou_Univ/Logic_Circuit/Kwak/test_TB.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity parity_testbench
+-- Compiling architecture sample_testbench of parity_testbench
+
+} {} {}}

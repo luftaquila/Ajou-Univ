@@ -1,0 +1,44 @@
+library ieee;                                 -- IEEE 라이브러리 사용
+use ieee.std_logic_1164.all;
+use ieee.std_logic_arith.all;
+use ieee.std_logic_1164.STD_LOGIC;
+
+entity tb is                                  -- 테스트벤치 entity 선언
+end tb;
+
+architecture tb_arch of tb is                 -- 테스트벤치 아키텍쳐 선언
+  component toParity                            -- 시뮬레이션할 toGray 모듈 불러오기
+  port(                                       -- 입력 포트 9개, 출력 포트 2개 선언.
+    I0, I1, I2, I3, I4, I5, I6, I7, I8 : in std_logic;
+    Q0, Q1 : out std_logic
+  );
+  end component;
+
+  signal I0, I1, I2, I3, I4, I5, I6, I7, I8 : std_logic;
+  signal Q0, Q1 : std_logic;
+
+begin
+  UUT : toParity port map (                     -- toParity 컴포넌트의 포트와 시그널을 연결
+    I0 => I0,
+    I1 => I1,
+    I2 => I2,
+    I3 => I3,
+    I4 => I4,
+    I5 => I5,
+    I6 => I6,
+    I7 => I7,
+    I8 => I8,
+    Q0 => Q0,
+    Q1 => Q1
+  );
+                                              -- 0000부터 1111까지 10ns 간격으로 입력값 전달
+  I0 <= 2 mod 2;
+  I1 <= 0 mod 2;
+  I2 <= 1 mod 2;
+  I3 <= 8 mod 2;
+  I4 <= 2 mod 2;
+  I5 <= 0 mod 2;
+  I6 <= 9 mod 2;
+  I7 <= 0 mod 2;
+  I8 <= 8 mod 2;
+end tb_arch;

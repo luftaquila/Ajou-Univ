@@ -1,0 +1,92 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/WINDOWS/system32
+Etb
+Z0 w1559282060
+Z1 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
+Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z3 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+Z4 dC:/Users/LUFT-AQUILA/Dropbox/Atom/Ajou_Univ/Logic_Circuit/Parity
+Z5 8C:/Users/LUFT-AQUILA/Dropbox/Atom/Ajou_Univ/Logic_Circuit/Parity/parity_TB.vhd
+Z6 FC:/Users/LUFT-AQUILA/Dropbox/Atom/Ajou_Univ/Logic_Circuit/Parity/parity_TB.vhd
+l0
+L5
+VQf3KiTDfEl3eb`k7B:JoI3
+!s100 BCX^jGO`H3V87CPQdogA60
+Z7 OV;C;10.5b;63
+33
+Z8 !s110 1559282065
+!i10b 1
+Z9 !s108 1559282065.000000
+Z10 !s90 -reportprogress|300|-work|work|-2008|-explicit|-stats=none|C:/Users/LUFT-AQUILA/Dropbox/Atom/Ajou_Univ/Logic_Circuit/Parity/parity_TB.vhd|
+Z11 !s107 C:/Users/LUFT-AQUILA/Dropbox/Atom/Ajou_Univ/Logic_Circuit/Parity/parity_TB.vhd|
+!i113 1
+Z12 o-work work -2008 -explicit
+Z13 tExplicit 1 CvgOpt 0
+Atb_arch
+R1
+R2
+R3
+DEx4 work 2 tb 0 22 Qf3KiTDfEl3eb`k7B:JoI3
+l27
+L8
+V=QITCEUA`?7`Z7J89kXCM2
+!s100 =]`LPZVbW3zZ7HYaS]_CE2
+R7
+33
+!s110 1559282066
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+R13
+Etoparity
+Z14 w1559281047
+R1
+R2
+R3
+R4
+Z15 8C:/Users/LUFT-AQUILA/Dropbox/Atom/Ajou_Univ/Logic_Circuit/Parity/parity.vhd
+Z16 FC:/Users/LUFT-AQUILA/Dropbox/Atom/Ajou_Univ/Logic_Circuit/Parity/parity.vhd
+l0
+L5
+V[<^3lAQzBa?YAc38D=YK30
+!s100 JR74R>zc?:Z_K:LiZhC[c0
+R7
+33
+R8
+!i10b 1
+R9
+Z17 !s90 -reportprogress|300|-work|work|-2008|-explicit|-stats=none|C:/Users/LUFT-AQUILA/Dropbox/Atom/Ajou_Univ/Logic_Circuit/Parity/parity.vhd|
+Z18 !s107 C:/Users/LUFT-AQUILA/Dropbox/Atom/Ajou_Univ/Logic_Circuit/Parity/parity.vhd|
+!i113 1
+R12
+R13
+Arun
+R1
+R2
+R3
+DEx4 work 8 toparity 0 22 [<^3lAQzBa?YAc38D=YK30
+l13
+L12
+VM]DK83XdY8P?ZZPh4:bKX2
+!s100 YMJWjPfHBCTfe@8Xl_]IW3
+R7
+33
+R8
+!i10b 1
+R9
+R17
+R18
+!i113 1
+R12
+R13

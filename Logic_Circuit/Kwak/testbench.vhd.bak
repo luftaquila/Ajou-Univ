@@ -1,0 +1,23 @@
+library IEEE;
+use IEEE.std_logic_1164.all;
+use IEEE.std_logic_arith.all;
+
+entity project is
+ port(a, b, c, d, e, f, g, h, i: in std_logic;
+      oddparity, evenparity : out std_logic);
+end project;
+
+architecture paritycheck of project is
+ signal A, B, C, D, E, F, G, H : std_logic;
+begin
+ A <= (a or b) and (a nand b);
+ B <= (c or d) and (c nand d);
+ C <= (e or f) and (e nand f);
+ D <= (g or h) and (g nand h);
+ E <= i;
+F <= (A or B) and (A nand B);
+G <= (C or D) and (C nand D);
+H <= (F or G) and (F nand G);
+evenparity <= (E or H) and (E nand H);
+oddparity <= not((E or H) and (E nand H));
+end paritycheck;

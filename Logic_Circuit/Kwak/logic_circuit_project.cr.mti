@@ -1,0 +1,6 @@
+C:/Users/LUFT-AQUILA/Dropbox/Atom/Ajou_Univ/Logic_Circuit/Kwak/parity_gate_tb.vhd {0 {vcom -work work -2008 -explicit -stats=none C:/Users/LUFT-AQUILA/Dropbox/Atom/Ajou_Univ/Logic_Circuit/Kwak/parity_gate_tb.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+** Error (suppressible): C:/Users/LUFT-AQUILA/Dropbox/Atom/Ajou_Univ/Logic_Circuit/Kwak/parity_gate_tb.vhd(2): (vcom-1491) Empty source files.
+
+} {} {}}

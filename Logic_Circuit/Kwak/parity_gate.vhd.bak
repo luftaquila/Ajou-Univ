@@ -1,0 +1,19 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity parity_gate is
+
+port(
+
+I_0,I_1,I_2,I_3,I_4,I_5,I_6,I_7,I_8: in std_logic;
+
+even_parity,odd_parity: out std_logic);
+
+end parity_gate;
+
+architecture sample of parity_gate is
+
+begin
+even_parity <= (((I_0 xor I_1) xor (I_2 xor I_3)) xor((I_4 xor I_5) xor (I_6 xor I_7))) xor I_8;
+odd_parity <= not((((I_0 xor I_1) xor (I_2 xor I_3)) xor((I_4 xor I_5) xor (I_6 xor I_7))) xor I_8); 
+end sample;
