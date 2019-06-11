@@ -2,8 +2,7 @@ package external_input;
 import java.util.HashMap;
 
 public class machine {
-	private machine() {
-	}
+	private machine() { }
 
 	public static final HashMap<Integer, String> machine_port = new HashMap<Integer, String>();
 	static {
@@ -17,5 +16,4 @@ public class machine {
 		machine_port.put(8,"DP");
 		machine_port.put(9,"DP");
 	}
-	
 }
