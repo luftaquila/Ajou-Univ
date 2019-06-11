@@ -28,6 +28,8 @@ public class external_input implements module {
 		if(machine_port.get(port_number).toString() == input_type) {
 			System.out.println("Port "  + port_number + " is working correctly");
 		}
-		else System.out.println("Port "  + port_number + " is not working");
+		else if(port_number >= 5 && port_number <= 9) {
+			System.out.println("Port "  + port_number + " is not working");
+		}
 	}
 }
