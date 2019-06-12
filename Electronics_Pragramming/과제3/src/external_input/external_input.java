@@ -18,13 +18,19 @@ public class external_input implements module {
 	public void setInput_type(String input_type) {
 		this.input_type = input_type;
 	}
-	public void checkInput_type(int port_number, String input_type) {
+	public void checkInput_type() {
+		int port_number = getPort_number();
+		String input_type = getInput_type();
+
 		if(machine_port.get(port_number).toString() == input_type) {
 			System.out.println("Port "  + port_number + " is Successfully Connected");
 		}
 		else System.out.println("Port "  + port_number + " is a different type");
 	}
 	public void print() {
+		int port_number = getPort_number();
+		String input_type = getInput_type();
+
 		if(machine_port.get(port_number).toString() == input_type) {
 			System.out.println("Port "  + port_number + " is working correctly");
 		}
