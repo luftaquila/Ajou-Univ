@@ -40,7 +40,7 @@
 
 ## 2. 코드 분석
 
-
+#### machine.java
 ```JAVA
 public static final HashMap<Integer, String> machine_port = new HashMap<Integer, String>();
 static {
@@ -55,10 +55,10 @@ static {
   machine_port.put(9,"DP");
 }
 ```
-machine.java에서 `machine_port` 해쉬맵에 1 ~ 9번 포트와 정상 입력 타입을 정의한다.
+`machine_port` 해쉬맵에 1 ~ 9번 포트와 정상 입력 타입을 정의한다.
 
 * * * * *
-
+#### external_input.java
 ```JAVA
 import static external_input.machine.machine_port;
 import external_input.module;
@@ -74,7 +74,7 @@ public class external_input implements module {
 	public void print() { ... }
 }
 ```
-external_input.java에서 인터페이스 `module`을 상속한 external_input 클래스를 정의하고, 속성 및 메소드를 정의한다.  
+인터페이스 `module`을 상속한 external_input 클래스를 정의하고, 속성 및 메소드를 정의한다.  
 추상 메소드 `checkInput_type()`과 `print()`를 구현한다.
 ```JAVA
 public void checkInput_type() {
@@ -111,6 +111,7 @@ public void print() {
 1. 포트 연결이 잘못된 경우, 5 ~ 9번 HDMI와 DP 포트일 때만 작동하지 않음을 알린다.
 
 * * * * *
+#### main.java
 ```JAVA
 vga input1 = new vga(1, "VGA");
 dvi input2 = new dvi(5, "DVI");
@@ -119,9 +120,10 @@ hdmi input4 = new hdmi(7, "HDMI");
 dp input5 = new dp(8, "VGA");
 dp input6 = new dp(9, "DP");
 ```
-main.java에서 input1부터 input6까지 총 6개의 외부 입력에 대해 연결 포트 및 종류를 결정하고 인스턴스를 생성한다.
+`input1`부터 `input6`까지 총 6개의 외부 입력에 대해 연결 포트 및 종류를 결정하고 인스턴스를 생성한다.
 
 * * * * *
+#### vga.java
 ```JAVA
 package external_input;
 import external_input.external_input;
@@ -134,7 +136,7 @@ public class vga extends external_input {
 	}
 }
 ```
-1. vga.java에서 `external_input` 클래스를 상속해 `vga` 클래스를 정의한다.
+1. `external_input` 클래스를 상속해 `vga` 클래스를 정의한다.
 1. `vga` 클래스의 생성자를 정의하고, 파라미터로 포트 번호와 입력 타입을 받아 저장한다.
 1. `external_input` 에서 상속한 `setPort_number()`와 `setInput_type()` 메소드를 이용해 생성한 인스턴스의 포트 번호 및 입력 타입을 지정한다.
 1. `checkInput_type()` 메소드를 이용해 입력이 올바르게 이루어졌는지를 검증한다.
@@ -142,6 +144,7 @@ public class vga extends external_input {
 1. dp, dvi, hdmi 클래스 또한 마찬가지로 `external_input` 클래스를 상속해 생성자를 정의한다.
 
 * * * * *
+#### main.java
 ```JAVA
 ArrayList<external_input> inputs = new ArrayList<external_input>();
 
@@ -157,7 +160,7 @@ for (external_input input: inputs) {
   input.print();
 }
 ```
-1. main.java에서 배열 `inputs`를 생성해 input1 ~ input6의 입력 인스턴스를 각 요소에 저장한다.
+1. 배열 `inputs`를 생성해 input1 ~ input6의 입력 인스턴스를 각 요소에 저장한다.
 1. 각 인스턴스에 대해 `print()` 메소드를 호출해 동작 상태를 점검한다.
 
 ## 3. 실행 결과 분석
