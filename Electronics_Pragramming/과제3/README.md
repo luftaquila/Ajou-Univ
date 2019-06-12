@@ -11,6 +11,9 @@
 * 포트에 외부 입력을 연결
   * 외부입력 타입 `VGA`, `DVI`, `HDMI`, `DP`
   * 포트 9개
+* 포트의 입력 연결 유효성 및 작동 여부 검사
+  * 모든 포트에 대해 외부 입력 연결이 유효한지 여부를 검사한다.
+  * 정상 작동중인 포트 정보를 출력하고, HDMI와 DP 포트에 한해 동작하지 않음을 출력한다.
 
 ### 2. 프로그램 구조
 #### 1. 인터페이스
@@ -27,9 +30,9 @@
     <br>
 1. external_input.java  
 각 포트 타입 클래스가 상속할 외부 입력 클래스 정의
-    * getPort_number(), getInput_type() : 해당 인스턴스의 포트 번호 및 입력 타입을 받아오는 메소드
-    * setPort_number(), setInput_type() : 해당 인스턴스의 포트 번호 및 입력 번호를 설정하는 메소드
-    * checkInput_type() : 해당 인스턴스가 올바른 포트에 연결되었는지 확인하는 메소드
+    * `getPort_number()`, `getInput_type()` : 해당 인스턴스의 포트 번호 및 입력 타입을 받아오는 메소드
+    * `setPort_number()`, `setInput_type()` : 해당 인스턴스의 포트 번호 및 입력 번호를 설정하는 메소드
+    * `checkInput_type()` : 해당 인스턴스가 올바른 포트에 연결되었는지 확인하는 메소드
     * print() : 해당 인스턴스가 올바른 포트에 연결되어 정상 작동하는지 확인하는 메소드
     <br>
 1. dp.java, dvi.java, hdmi.java, vga.java  
@@ -37,7 +40,7 @@
 
 ## 2. 코드 분석
 
-
+#### machine.java
 ```JAVA
 public static final HashMap<Integer, String> machine_port = new HashMap<Integer, String>();
 static {
@@ -52,10 +55,10 @@ static {
   machine_port.put(9,"DP");
 }
 ```
-machine.java에서 `machine_port` 해쉬맵에 1 ~ 9번 포트와 정상 입력 타입을 정의한다.
+`machine_port` 해쉬맵에 1 ~ 9번 포트와 정상 입력 타입을 정의한다.
 
 * * * * *
-
+#### external_input.java
 ```JAVA
 import static external_input.machine.machine_port;
 import external_input.module;
@@ -71,7 +74,7 @@ public class external_input implements module {
 	public void print() { ... }
 }
 ```
-external_input.java에서 인터페이스 `module`을 상속한 external_input 클래스를 정의하고, 속성 및 메소드를 정의한다.  
+인터페이스 `module`을 상속한 external_input 클래스를 정의하고, 속성 및 메소드를 정의한다.  
 추상 메소드 `checkInput_type()`과 `print()`를 구현한다.
 ```JAVA
 public void checkInput_type() {
@@ -84,8 +87,9 @@ public void checkInput_type() {
   else System.out.println("Port "  + port_number + " is a different type");
 }
 ```
-1. getPort_number()와 getInput_type()을 이용해 인스턴스의 포트 번호 및 입력 타입 정보를 얻어와 저장한다.
-1. machine_port.get(port_number).toString()를 통해 해당 포트의 정상 입력 타입이 무엇인지 확인하고, 해당 인스턴스의 입력 타입 속성과 같다면 정상적으로 연결되었음을 알린다.
+1. `getPort_number()`와 `getInput_type()`을 이용해 인스턴스의 포트 번호 및 입력 타입 정보를 얻어와 저장한다.
+1. *machine_port.get(port_number).toString()* 를 통해 해당 포트의 정상 입력 타입이 무엇인지 확인하고,  
+해당 인스턴스의 입력 타입 속성과 같다면 정상적으로 연결되었음을 알린다.
 1. 다르다면, 입력 타입이 다름을 알린다.
 
 ```JAVA
@@ -102,10 +106,12 @@ public void print() {
 }
 ```
 1. `getPort_number()`와 `getInput_type()`을 이용해 인스턴스의 포트 번호 및 입력 타입 정보를 얻어와 저장한다.
-1. *machine_port.get(port_number).toString()* 를 통해 해당 포트의 정상 입력 타입이 무엇인지 확인하고, 해당 인스턴스의 입력 타입 속성과 같다면 정상적으로 작동 중임을 알린다.
+1. *machine_port.get(port_number).toString()* 를 통해 해당 포트의 정상 입력 타입이 무엇인지 확인하고,  
+해당 인스턴스의 입력 타입 속성과 같다면 정상적으로 작동 중임을 알린다.
 1. 포트 연결이 잘못된 경우, 5 ~ 9번 HDMI와 DP 포트일 때만 작동하지 않음을 알린다.
 
 * * * * *
+#### main.java
 ```JAVA
 vga input1 = new vga(1, "VGA");
 dvi input2 = new dvi(5, "DVI");
@@ -114,9 +120,10 @@ hdmi input4 = new hdmi(7, "HDMI");
 dp input5 = new dp(8, "VGA");
 dp input6 = new dp(9, "DP");
 ```
-main.java에서 input1부터 input6까지 총 6개의 외부 입력에 대해 연결 포트 및 종류를 결정하고 인스턴스를 생성한다.
+`input1`부터 `input6`까지 총 6개의 외부 입력에 대해 연결 포트 및 종류를 결정하고 인스턴스를 생성한다.
 
 * * * * *
+#### vga.java
 ```JAVA
 package external_input;
 import external_input.external_input;
@@ -129,7 +136,7 @@ public class vga extends external_input {
 	}
 }
 ```
-1. vga.java에서 `external_input` 클래스를 상속해 `vga` 클래스를 정의한다.
+1. `external_input` 클래스를 상속해 `vga` 클래스를 정의한다.
 1. `vga` 클래스의 생성자를 정의하고, 파라미터로 포트 번호와 입력 타입을 받아 저장한다.
 1. `external_input` 에서 상속한 `setPort_number()`와 `setInput_type()` 메소드를 이용해 생성한 인스턴스의 포트 번호 및 입력 타입을 지정한다.
 1. `checkInput_type()` 메소드를 이용해 입력이 올바르게 이루어졌는지를 검증한다.
@@ -137,6 +144,7 @@ public class vga extends external_input {
 1. dp, dvi, hdmi 클래스 또한 마찬가지로 `external_input` 클래스를 상속해 생성자를 정의한다.
 
 * * * * *
+#### main.java
 ```JAVA
 ArrayList<external_input> inputs = new ArrayList<external_input>();
 
@@ -168,11 +176,21 @@ for (external_input input: inputs) {
   input.print();
 ```
 에서 각 포트의 동작 상태를 점검한다.
-잘못 연결된 5번, 8번 포트가 작동하지 않음을 확인할 수 있다. 두 포트 모두 잘못 연결됐을 시 이를 알려야 하는 HDMI, DP 포트이므로, 출력이 발생한다.
+잘못 연결된 5번, 8번 포트가 작동하지 않음을 확인할 수 있다.  
+두 포트 모두 잘못 연결됐을 시 이를 알려야 하는 HDMI, DP 포트이므로, 출력이 발생한다.
 
 ## 4. 전체 코드
+#### main.java
 ![main](/Electronics_Pragramming/과제3/images/main.png)  
+* * * * *
+#### machine.java
 ![machine](/Electronics_Pragramming/과제3/images/machine.png)  
+* * * * *
+#### external_input.java
 ![external_input](/Electronics_Pragramming/과제3/images/external_input.png)  
+* * * * *
+#### instances
 ![instances](/Electronics_Pragramming/과제3/images/instances.png)  
+* * * * *
+#### module.java
 ![module](/Electronics_Pragramming/과제3/images/module.png)  
