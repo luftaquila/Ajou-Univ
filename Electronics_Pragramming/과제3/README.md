@@ -11,6 +11,9 @@
 * 포트에 외부 입력을 연결
   * 외부입력 타입 `VGA`, `DVI`, `HDMI`, `DP`
   * 포트 9개
+* 포트의 입력 연결 유효성 및 작동 여부 검사
+  * 모든 포트에 대해 외부 입력 연결이 유효한지 여부를 검사한다.
+  * 정상 작동중인 포트 정보를 출력하고, HDMI와 DP 포트에 한해 동작하지 않음을 출력한다.
 
 ### 2. 프로그램 구조
 #### 1. 인터페이스
@@ -27,9 +30,9 @@
     <br>
 1. external_input.java  
 각 포트 타입 클래스가 상속할 외부 입력 클래스 정의
-    * getPort_number(), getInput_type() : 해당 인스턴스의 포트 번호 및 입력 타입을 받아오는 메소드
-    * setPort_number(), setInput_type() : 해당 인스턴스의 포트 번호 및 입력 번호를 설정하는 메소드
-    * checkInput_type() : 해당 인스턴스가 올바른 포트에 연결되었는지 확인하는 메소드
+    * `getPort_number()`, `getInput_type()` : 해당 인스턴스의 포트 번호 및 입력 타입을 받아오는 메소드
+    * `setPort_number()`, `setInput_type()` : 해당 인스턴스의 포트 번호 및 입력 번호를 설정하는 메소드
+    * `checkInput_type()` : 해당 인스턴스가 올바른 포트에 연결되었는지 확인하는 메소드
     * print() : 해당 인스턴스가 올바른 포트에 연결되어 정상 작동하는지 확인하는 메소드
     <br>
 1. dp.java, dvi.java, hdmi.java, vga.java  
@@ -84,8 +87,9 @@ public void checkInput_type() {
   else System.out.println("Port "  + port_number + " is a different type");
 }
 ```
-1. getPort_number()와 getInput_type()을 이용해 인스턴스의 포트 번호 및 입력 타입 정보를 얻어와 저장한다.
-1. machine_port.get(port_number).toString()를 통해 해당 포트의 정상 입력 타입이 무엇인지 확인하고, 해당 인스턴스의 입력 타입 속성과 같다면 정상적으로 연결되었음을 알린다.
+1. `getPort_number()`와 `getInput_type()`을 이용해 인스턴스의 포트 번호 및 입력 타입 정보를 얻어와 저장한다.
+1. *machine_port.get(port_number).toString()* 를 통해 해당 포트의 정상 입력 타입이 무엇인지 확인하고,  
+해당 인스턴스의 입력 타입 속성과 같다면 정상적으로 연결되었음을 알린다.
 1. 다르다면, 입력 타입이 다름을 알린다.
 
 ```JAVA
@@ -102,7 +106,8 @@ public void print() {
 }
 ```
 1. `getPort_number()`와 `getInput_type()`을 이용해 인스턴스의 포트 번호 및 입력 타입 정보를 얻어와 저장한다.
-1. *machine_port.get(port_number).toString()* 를 통해 해당 포트의 정상 입력 타입이 무엇인지 확인하고, 해당 인스턴스의 입력 타입 속성과 같다면 정상적으로 작동 중임을 알린다.
+1. *machine_port.get(port_number).toString()* 를 통해 해당 포트의 정상 입력 타입이 무엇인지 확인하고,  
+해당 인스턴스의 입력 타입 속성과 같다면 정상적으로 작동 중임을 알린다.
 1. 포트 연결이 잘못된 경우, 5 ~ 9번 HDMI와 DP 포트일 때만 작동하지 않음을 알린다.
 
 * * * * *
@@ -152,7 +157,7 @@ for (external_input input: inputs) {
   input.print();
 }
 ```
-1. 배열 `inputs`를 생성해 input1 ~ input6의 입력 인스턴스를 각 요소에 저장한다.
+1. main.java에서 배열 `inputs`를 생성해 input1 ~ input6의 입력 인스턴스를 각 요소에 저장한다.
 1. 각 인스턴스에 대해 `print()` 메소드를 호출해 동작 상태를 점검한다.
 
 ## 3. 실행 결과 분석
@@ -168,11 +173,21 @@ for (external_input input: inputs) {
   input.print();
 ```
 에서 각 포트의 동작 상태를 점검한다.
-잘못 연결된 5번, 8번 포트가 작동하지 않음을 확인할 수 있다. 두 포트 모두 잘못 연결됐을 시 이를 알려야 하는 HDMI, DP 포트이므로, 출력이 발생한다.
+잘못 연결된 5번, 8번 포트가 작동하지 않음을 확인할 수 있다.  
+두 포트 모두 잘못 연결됐을 시 이를 알려야 하는 HDMI, DP 포트이므로, 출력이 발생한다.
 
 ## 4. 전체 코드
+#### main.java
 ![main](/Electronics_Pragramming/과제3/images/main.png)  
+* * * * *
+#### machine.java
 ![machine](/Electronics_Pragramming/과제3/images/machine.png)  
+* * * * *
+#### external_input.java
 ![external_input](/Electronics_Pragramming/과제3/images/external_input.png)  
+* * * * *
+#### instances
 ![instances](/Electronics_Pragramming/과제3/images/instances.png)  
+* * * * *
+#### module.java
 ![module](/Electronics_Pragramming/과제3/images/module.png)  
