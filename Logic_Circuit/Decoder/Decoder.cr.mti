@@ -1,0 +1,50 @@
+C:/Users/LUFT-AQUILA/Dropbox/Atom/Ajou_Univ/Logic_Circuit/Decoder/Decoder_TB.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/LUFT-AQUILA/Dropbox/Atom/Ajou_Univ/Logic_Circuit/Decoder/Decoder_TB.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.6d Compiler 2018.02 Feb 24 2018
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Compiling entity tb
+-- Compiling architecture tb_arch of tb
+
+} {} {}} C:/Users/LUFT-AQUILA/Dropbox/Atom/Ajou_Univ/Logic_Circuit/Decoder/Decoder2x4.vhd {2 {vcom -work work -2002 -explicit -stats=none C:/Users/LUFT-AQUILA/Dropbox/Atom/Ajou_Univ/Logic_Circuit/Decoder/Decoder2x4.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.6d Compiler 2018.02 Feb 24 2018
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Compiling entity decoder2x4
+-- Compiling architecture D2x4 of decoder2x4
+** Warning: C:/Users/LUFT-AQUILA/Dropbox/Atom/Ajou_Univ/Logic_Circuit/Decoder/Decoder2x4.vhd(25): (vcom-1090) Possible infinite loop: Process contains no WAIT statement.
+
+} {} {}} C:/Users/LUFT-AQUILA/Dropbox/Atom/Ajou_Univ/Logic_Circuit/Decoder/Decoder4x16.vhd {2 {vcom -work work -2002 -explicit -stats=none C:/Users/LUFT-AQUILA/Dropbox/Atom/Ajou_Univ/Logic_Circuit/Decoder/Decoder4x16.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.6d Compiler 2018.02 Feb 24 2018
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Compiling entity decoder4x16
+-- Compiling architecture D4x16 of decoder4x16
+** Warning: C:/Users/LUFT-AQUILA/Dropbox/Atom/Ajou_Univ/Logic_Circuit/Decoder/Decoder4x16.vhd(37): (vcom-1090) Possible infinite loop: Process contains no WAIT statement.
+
+} {} {}} C:/Users/LUFT-AQUILA/Dropbox/Atom/Ajou_Univ/Logic_Circuit/Decoder/Decoder3x8.vhd {2 {vcom -work work -2002 -explicit -stats=none C:/Users/LUFT-AQUILA/Dropbox/Atom/Ajou_Univ/Logic_Circuit/Decoder/Decoder3x8.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.6d Compiler 2018.02 Feb 24 2018
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Compiling entity decoder3x8
+-- Compiling architecture D3x8 of decoder3x8
+** Warning: C:/Users/LUFT-AQUILA/Dropbox/Atom/Ajou_Univ/Logic_Circuit/Decoder/Decoder3x8.vhd(29): (vcom-1090) Possible infinite loop: Process contains no WAIT statement.
+
+} {} {}} C:/Users/LUFT-AQUILA/Dropbox/Atom/Ajou_Univ/Logic_Circuit/Decoder/Decoder1x2.vhd {2 {vcom -work work -2002 -explicit -stats=none C:/Users/LUFT-AQUILA/Dropbox/Atom/Ajou_Univ/Logic_Circuit/Decoder/Decoder1x2.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.6d Compiler 2018.02 Feb 24 2018
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Compiling entity decoder1x2
+-- Compiling architecture D1x2 of decoder1x2
+** Warning: C:/Users/LUFT-AQUILA/Dropbox/Atom/Ajou_Univ/Logic_Circuit/Decoder/Decoder1x2.vhd(23): (vcom-1090) Possible infinite loop: Process contains no WAIT statement.
+
+} {} {}}

@@ -1,0 +1,8 @@
+# Compile of Controller.vhd was successful with warnings.
+# Compile of Decoder_TB.vhd was successful.
+# Compile of Decoder1x2.vhd was successful with warnings.
+# Compile of Decoder2x4.vhd was successful with warnings.
+# Compile of Decoder3x8.vhd was successful with warnings.
+# Compile of Decoder4x16.vhd was successful with warnings.
+# 6 compiles, 0 failed with no errors.
+# Compile of Controller.vhd failed with 24 errors.
