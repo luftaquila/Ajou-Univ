@@ -1,0 +1,186 @@
+C:/Users/LUFT-AQUILA/Dropbox/Atom/Ajou_Univ/Logic_Circuit/Decoder/Controller.vhd {0 {vcom -work work -2002 -explicit -stats=none C:/Users/LUFT-AQUILA/Dropbox/Atom/Ajou_Univ/Logic_Circuit/7x92Decoder/Decoder4x16.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.6d Compiler 2018.02 Feb 24 2018
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Compiling entity decoder4x16
+-- Compiling architecture D4x16 of decoder4x16
+** Warning: (vcom-6) -- Waiting for lock by "LUFT-AQUILA@LUFT-AQUILA, pid = 5692
+". Lockfile is "C:/Users/LUFT-AQUILA/Dropbox/Atom/Ajou_Univ/Logic_Circuit/Decoder/work/_lock".
+** Warning: (vcom-6) -- Waiting for lock by "LUFT-AQUILA@LUFT-AQUILA, pid = 5692
+** Warning: (vcom-6) -- Waiting for lock by "LUFT-AQUILA@LUFT-AQUILA, pid = 5692
+". Lockfile is "C:/Users/LUFT-AQUILA/Dropbox/Atom/Ajou_Univ/Logic_Circuit/Decoder/work/_lock".
+". Lockfile is "C:/Users/LUFT-AQUILA/Dropbox/Atom/Ajou_Univ/Logic_Circuit/Decoder/work/_lock".
+** Warning: (vcom-6) -- Waiting for lock by "LUFT-AQUILA@LUFT-AQUILA, pid = 5692
+". Lockfile is "C:/Users/LUFT-AQUILA/Dropbox/Atom/Ajou_Univ/Logic_Circuit/Decoder/work/_lock".
+** Warning: (vcom-6) -- Waiting for lock by "LUFT-AQUILA@LUFT-AQUILA, pid = 5692
+** Warning: (vcom-6) -- Waiting for lock by "LUFT-AQUILA@LUFT-AQUILA, pid = 5692
+". Lockfile is "C:/Users/LUFT-AQUILA/Dropbox/Atom/Ajou_Univ/Logic_Circuit/Decoder/work/_lock".
+". Lockfile is "C:/Users/LUFT-AQUILA/Dropbox/Atom/Ajou_Univ/Logic_Circuit/Decoder/work/_lock".
+** Warning: (vcom-6) -- Waiting for lock by "LUFT-AQUILA@LUFT-AQUILA, pid = 5692
+". Lockfile is "C:/Users/LUFT-AQUILA/Dropbox/Atom/Ajou_Univ/Logic_Circuit/Decoder/work/_lock".
+** Warning: (vcom-6) -- Waiting for lock by "LUFT-AQUILA@LUFT-AQUILA, pid = 5692
+** Warning: (vcom-6) -- Waiting for lock by "LUFT-AQUILA@LUFT-AQUILA, pid = 5692
+". Lockfile is "C:/Users/LUFT-AQUILA/Dropbox/Atom/Ajou_Univ/Logic_Circuit/Decoder/work/_lock".
+". Lockfile is "C:/Users/LUFT-AQUILA/Dropbox/Atom/Ajou_Univ/Logic_Circuit/Decoder/work/_lock".
+** Warning: (vcom-6) -- Waiting for lock by "LUFT-AQUILA@LUFT-AQUILA, pid = 5692
+". Lockfile is "C:/Users/LUFT-AQUILA/Dropbox/Atom/Ajou_Univ/Logic_Circuit/Decoder/work/_lock".
+** Warning: (vcom-6) -- Waiting for lock by "LUFT-AQUILA@LUFT-AQUILA, pid = 5692
+** Warning: (vcom-6) -- Waiting for lock by "LUFT-AQUILA@LUFT-AQUILA, pid = 5692
+". Lockfile is "C:/Users/LUFT-AQUILA/Dropbox/Atom/Ajou_Univ/Logic_Circuit/Decoder/work/_lock".
+". Lockfile is "C:/Users/LUFT-AQUILA/Dropbox/Atom/Ajou_Univ/Logic_Circuit/Decoder/work/_lock".
+** Warning: (vcom-6) -- Waiting for lock by "LUFT-AQUILA@LUFT-AQUILA, pid = 5692
+". Lockfile is "C:/Users/LUFT-AQUILA/Dropbox/Atom/Ajou_Univ/Logic_Circuit/Decoder/work/_lock".
+** Warning: (vcom-6) -- Waiting for lock by "LUFT-AQUILA@LUFT-AQUILA, pid = 5692
+** Warning: (vcom-6) -- Waiting for lock by "LUFT-AQUILA@LUFT-AQUILA, pid = 5692
+". Lockfile is "C:/Users/LUFT-AQUILA/Dropbox/Atom/Ajou_Univ/Logic_Circuit/Decoder/work/_lock".
+". Lockfile is "C:/Users/LUFT-AQUILA/Dropbox/Atom/Ajou_Univ/Logic_Circuit/Decoder/work/_lock".
+** Warning: (vcom-6) -- Waiting for lock by "LUFT-AQUILA@LUFT-AQUILA, pid = 5692
+". Lockfile is "C:/Users/LUFT-AQUILA/Dropbox/Atom/Ajou_Univ/Logic_Circuit/Decoder/work/_lock".
+** Warning: (vcom-6) -- Waiting for lock by "LUFT-AQUILA@LUFT-AQUILA, pid = 5692
+". Lockfile is "C:/Users/LUFT-AQUILA/Dropbox/Atom/Ajou_Univ/Logic_Circuit/Decoder/work/_lock".
+** Warning: (vcom-6) -- Waiting for lock by "LUFT-AQUILA@LUFT-AQUILA, pid = 5692
+". Lockfile is "C:/Users/LUFT-AQUILA/Dropbox/Atom/Ajou_Univ/Logic_Circuit/Decoder/work/_lock".
+** Warning: (vcom-6) -- Waiting for lock by "LUFT-AQUILA@LUFT-AQUILA, pid = 5692
+". Lockfile is "C:/Users/LUFT-AQUILA/Dropbox/Atom/Ajou_Univ/Logic_Circuit/Decoder/work/_lock".
+** Warning: (vcom-6) -- Waiting for lock by "LUFT-AQUILA@LUFT-AQUILA, pid = 5692
+** Warning: (vcom-6) -- Waiting for lock by "LUFT-AQUILA@LUFT-AQUILA, pid = 5692
+". Lockfile is "C:/Users/LUFT-AQUILA/Dropbox/Atom/Ajou_Univ/Logic_Circuit/Decoder/work/_lock".
+". Lockfile is "C:/Users/LUFT-AQUILA/Dropbox/Atom/Ajou_Univ/Logic_Circuit/Decoder/work/_lock".
+** Warning: (vcom-6) -- Waiting for lock by "LUFT-AQUILA@LUFT-AQUILA, pid = 5692
+". Lockfile is "C:/Users/LUFT-AQUILA/Dropbox/Atom/Ajou_Univ/Logic_Circuit/Decoder/work/_lock".
+** Warning: (vcom-6) -- Waiting for lock by "LUFT-AQUILA@LUFT-AQUILA, pid = 5692
+". Lockfile is "C:/Users/LUFT-AQUILA/Dropbox/Atom/Ajou_Univ/Logic_Circuit/Decoder/work/_lock".
+** Warning: (vcom-6) -- Waiting for lock by "LUFT-AQUILA@LUFT-AQUILA, pid = 5692
+". Lockfile is "C:/Users/LUFT-AQUILA/Dropbox/Atom/Ajou_Univ/Logic_Circuit/Decoder/work/_lock".
+** Warning: (vcom-6) -- Waiting for lock by "LUFT-AQUILA@LUFT-AQUILA, pid = 5692
+". Lockfile is "C:/Users/LUFT-AQUILA/Dropbox/Atom/Ajou_Univ/Logic_Circuit/Decoder/work/_lock".
+** Warning: (vcom-6) -- Waiting for lock by "LUFT-AQUILA@LUFT-AQUILA, pid = 5692
+** Warning: (vcom-6) -- Waiting for lock by "LUFT-AQUILA@LUFT-AQUILA, pid = 5692
+". Lockfile is "C:/Users/LUFT-AQUILA/Dropbox/Atom/Ajou_Univ/Logic_Circuit/Decoder/work/_lock".
+". Lockfile is "C:/Users/LUFT-AQUILA/Dropbox/Atom/Ajou_Univ/Logic_Circuit/Decoder/work/_lock".
+** Warning: (vcom-6) -- Waiting for lock by "LUFT-AQUILA@LUFT-AQUILA, pid = 5692
+". Lockfile is "C:/Users/LUFT-AQUILA/Dropbox/Atom/Ajou_Univ/Logic_Circuit/Decoder/work/_lock".
+** Warning: (vcom-6) -- Waiting for lock by "LUFT-AQUILA@LUFT-AQUILA, pid = 5692
+". Lockfile is "C:/Users/LUFT-AQUILA/Dropbox/Atom/Ajou_Univ/Logic_Circuit/Decoder/work/_lock".
+** Warning: (vcom-6) -- Waiting for lock by "LUFT-AQUILA@LUFT-AQUILA, pid = 5692
+". Lockfile is "C:/Users/LUFT-AQUILA/Dropbox/Atom/Ajou_Univ/Logic_Circuit/Decoder/work/_lock".
+** Warning: (vcom-6) -- Waiting for lock by "LUFT-AQUILA@LUFT-AQUILA, pid = 5692
+". Lockfile is "C:/Users/LUFT-AQUILA/Dropbox/Atom/Ajou_Univ/Logic_Circuit/Decoder/work/_lock".
+** Warning: (vcom-6) -- Waiting for lock by "LUFT-AQUILA@LUFT-AQUILA, pid = 5692
+". Lockfile is "C:/Users/LUFT-AQUILA/Dropbox/Atom/Ajou_Univ/Logic_Circuit/Decoder/work/_lock".
+** Warning: (vcom-6) -- Waiting for lock by "LUFT-AQUILA@LUFT-AQUILA, pid = 5692
+". Lockfile is "C:/Users/LUFT-AQUILA/Dropbox/Atom/Ajou_Univ/Logic_Circuit/Decoder/work/_lock".
+** Warning: (vcom-6) -- Waiting for lock by "LUFT-AQUILA@LUFT-AQUILA, pid = 5692
+". Lockfile is "C:/Users/LUFT-AQUILA/Dropbox/Atom/Ajou_Univ/Logic_Circuit/Decoder/work/_lock".
+** Warning: (vcom-6) -- Waiting for lock by "LUFT-AQUILA@LUFT-AQUILA, pid = 5692
+". Lockfile is "C:/Users/LUFT-AQUILA/Dropbox/Atom/Ajou_Univ/Logic_Circuit/Decoder/work/_lock".
+** Warning: (vcom-6) -- Waiting for lock by "LUFT-AQUILA@LUFT-AQUILA, pid = 5692
+". Lockfile is "C:/Users/LUFT-AQUILA/Dropbox/Atom/Ajou_Univ/Logic_Circuit/Decoder/work/_lock".
+** Warning: (vcom-6) -- Waiting for lock by "LUFT-AQUILA@LUFT-AQUILA, pid = 5692
+". Lockfile is "C:/Users/LUFT-AQUILA/Dropbox/Atom/Ajou_Univ/Logic_Circuit/Decoder/work/_lock".
+** Warning: (vcom-6) -- Waiting for lock by "LUFT-AQUILA@LUFT-AQUILA, pid = 5692
+". Lockfile is "C:/Users/LUFT-AQUILA/Dropbox/Atom/Ajou_Univ/Logic_Circuit/Decoder/work/_lock".
+** Warning: (vcom-6) -- Waiting for lock by "LUFT-AQUILA@LUFT-AQUILA, pid = 5692
+". Lockfile is "C:/Users/LUFT-AQUILA/Dropbox/Atom/Ajou_Univ/Logic_Circuit/Decoder/work/_lock".
+** Warning: (vcom-6) -- Waiting for lock by "LUFT-AQUILA@LUFT-AQUILA, pid = 5692
+". Lockfile is "C:/Users/LUFT-AQUILA/Dropbox/Atom/Ajou_Univ/Logic_Circuit/Decoder/work/_lock".
+** Warning: (vcom-6) -- Waiting for lock by "LUFT-AQUILA@LUFT-AQUILA, pid = 5692
+". Lockfile is "C:/Users/LUFT-AQUILA/Dropbox/Atom/Ajou_Univ/Logic_Circuit/Decoder/work/_lock".
+** Warning: (vcom-6) -- Waiting for lock by "LUFT-AQUILA@LUFT-AQUILA, pid = 5692
+". Lockfile is "C:/Users/LUFT-AQUILA/Dropbox/Atom/Ajou_Univ/Logic_Circuit/Decoder/work/_lock".
+** Warning: (vcom-6) -- Waiting for lock by "LUFT-AQUILA@LUFT-AQUILA, pid = 5692
+". Lockfile is "C:/Users/LUFT-AQUILA/Dropbox/Atom/Ajou_Univ/Logic_Circuit/Decoder/work/_lock".
+** Warning: (vcom-6) -- Waiting for lock by "LUFT-AQUILA@LUFT-AQUILA, pid = 5692
+** Warning: (vcom-6) -- Waiting for lock by "LUFT-AQUILA@LUFT-AQUILA, pid = 5692
+". Lockfile is "C:/Users/LUFT-AQUILA/Dropbox/Atom/Ajou_Univ/Logic_Circuit/Decoder/work/_lock".
+". Lockfile is "C:/Users/LUFT-AQUILA/Dropbox/Atom/Ajou_Univ/Logic_Circuit/Decoder/work/_lock".
+** Warning: (vcom-6) -- Waiting for lock by "LUFT-AQUILA@LUFT-AQUILA, pid = 5692
+". Lockfile is "C:/Users/LUFT-AQUILA/Dropbox/Atom/Ajou_Univ/Logic_Circuit/Decoder/work/_lock".
+** Warning: (vcom-6) -- Waiting for lock by "LUFT-AQUILA@LUFT-AQUILA, pid = 5692
+** Warning: (vcom-6) -- Waiting for lock by "LUFT-AQUILA@LUFT-AQUILA, pid = 5692
+". Lockfile is "C:/Users/LUFT-AQUILA/Dropbox/Atom/Ajou_Univ/Logic_Circuit/Decoder/work/_lock".
+". Lockfile is "C:/Users/LUFT-AQUILA/Dropbox/Atom/Ajou_Univ/Logic_Circuit/Decoder/work/_lock".
+** Warning: (vcom-6) -- Waiting for lock by "LUFT-AQUILA@LUFT-AQUILA, pid = 5692
+". Lockfile is "C:/Users/LUFT-AQUILA/Dropbox/Atom/Ajou_Univ/Logic_Circuit/Decoder/work/_lock".
+** Warning: (vcom-6) -- Waiting for lock by "LUFT-AQUILA@LUFT-AQUILA, pid = 5692
+** Warning: (vcom-6) -- Waiting for lock by "LUFT-AQUILA@LUFT-AQUILA, pid = 5692
+". Lockfile is "C:/Users/LUFT-AQUILA/Dropbox/Atom/Ajou_Univ/Logic_Circuit/Decoder/work/_lock".
+". Lockfile is "C:/Users/LUFT-AQUILA/Dropbox/Atom/Ajou_Univ/Logic_Circuit/Decoder/work/_lock".
+** Warning: (vcom-6) -- Waiting for lock by "LUFT-AQUILA@LUFT-AQUILA, pid = 5692
+". Lockfile is "C:/Users/LUFT-AQUILA/Dropbox/Atom/Ajou_Univ/Logic_Circuit/Decoder/work/_lock".
+** Warning: (vcom-6) -- Waiting for lock by "LUFT-AQUILA@LUFT-AQUILA, pid = 5692
+** Warning: (vcom-6) -- Waiting for lock by "LUFT-AQUILA@LUFT-AQUILA, pid = 5692
+". Lockfile is "C:/Users/LUFT-AQUILA/Dropbox/Atom/Ajou_Univ/Logic_Circuit/Decoder/work/_lock".
+". Lockfile is "C:/Users/LUFT-AQUILA/Dropbox/Atom/Ajou_Univ/Logic_Circuit/Decoder/work/_lock".
+** Warning: (vcom-6) -- Waiting for lock by "LUFT-AQUILA@LUFT-AQUILA, pid = 5692
+". Lockfile is "C:/Users/LUFT-AQUILA/Dropbox/Atom/Ajou_Univ/Logic_Circuit/Decoder/work/_lock".
+** Warning: (vcom-6) -- Waiting for lock by "LUFT-AQUILA@LUFT-AQUILA, pid = 5692
+** Warning: (vcom-6) -- Waiting for lock by "LUFT-AQUILA@LUFT-AQUILA, pid = 5692
+". Lockfile is "C:/Users/LUFT-AQUILA/Dropbox/Atom/Ajou_Univ/Logic_Circuit/Decoder/work/_lock".
+". Lockfile is "C:/Users/LUFT-AQUILA/Dropbox/Atom/Ajou_Univ/Logic_Circuit/Decoder/work/_lock".
+** Warning: (vcom-6) -- Waiting for lock by "LUFT-AQUILA@LUFT-AQUILA, pid = 5692
+". Lockfile is "C:/Users/LUFT-AQUILA/Dropbox/Atom/Ajou_Univ/Logic_Circuit/Decoder/work/_lock".
+** Warning: (vcom-6) -- Waiting for lock by "LUFT-AQUILA@LUFT-AQUILA, pid = 5692
+** Warning: (vcom-6) -- Waiting for lock by "LUFT-AQUILA@LUFT-AQUILA, pid = 5692
+". Lockfile is "C:/Users/LUFT-AQUILA/Dropbox/Atom/Ajou_Univ/Logic_Circuit/Decoder/work/_lock".
+". Lockfile is "C:/Users/LUFT-AQUILA/Dropbox/Atom/Ajou_Univ/Logic_Circuit/Decoder/work/_lock".
+** Warning: (vcom-6) -- Waiting for lock by "LUFT-AQUILA@LUFT-AQUILA, pid = 5692
+". Lockfile is "C:/Users/LUFT-AQUILA/Dropbox/Atom/Ajou_Univ/Logic_Circuit/Decoder/work/_lock".
+** Warning: (vcom-6) -- Waiting for lock by "LUFT-AQUILA@LUFT-AQUILA, pid = 5692
+". Lockfile is "C:/Users/LUFT-AQUILA/Dropbox/Atom/Ajou_Univ/Logic_Circuit/Decoder/work/_lock".
+** Warning: (vcom-6) -- Waiting for lock by "LUFT-AQUILA@LUFT-AQUILA, pid = 5692
+". Lockfile is "C:/Users/LUFT-AQUILA/Dropbox/Atom/Ajou_Univ/Logic_Circuit/Decoder/work/_lock".
+** Warning: (vcom-6) -- Waiting for lock by "LUFT-AQUILA@LUFT-AQUILA, pid = 5692
+". Lockfile is "C:/Users/LUFT-AQUILA/Dropbox/Atom/Ajou_Univ/Logic_Circuit/Decoder/work/_lock".
+** Warning: (vcom-6) -- Waiting for lock by "LUFT-AQUILA@LUFT-AQUILA, pid = 5692
+". Lockfile is "C:/Users/LUFT-AQUILA/Dropbox/Atom/Ajou_Univ/Logic_Circuit/Decoder/work/_lock".
+** Warning: (vcom-6) -- Waiting for lock by "LUFT-AQUILA@LUFT-AQUILA, pid = 5692
+". Lockfile is "C:/Users/LUFT-AQUILA/Dropbox/Atom/Ajou_Univ/Logic_Circuit/Decoder/work/_lock".
+** Warning: (vcom-6) -- Waiting for lock by "LUFT-AQUILA@LUFT-AQUILA, pid = 5692
+". Lockfile is "C:/Users/LUFT-AQUILA/Dropbox/Atom/Ajou_Univ/Logic_Circuit/Decoder/work/_lock".
+** Warning: (vcom-6) -- Waiting for lock by "LUFT-AQUILA@LUFT-AQUILA, pid = 5692
+". Lockfile is "C:/Users/LUFT-AQUILA/Dropbox/Atom/Ajou_Univ/Logic_Circuit/Decoder/work/_lock".
+** Warning: (vcom-6) -- Waiting for lock by "LUFT-AQUILA@LUFT-AQUILA, pid = 5692
+". Lockfile is "C:/Users/LUFT-AQUILA/Dropbox/Atom/Ajou_Univ/Logic_Circuit/Decoder/work/_lock".
+** Warning: (vcom-6) -- Waiting for lock by "LUFT-AQUILA@LUFT-AQUILA, pid = 5692
+". Lockfile is "C:/Users/LUFT-AQUILA/Dropbox/Atom/Ajou_Univ/Logic_Circuit/Decoder/work/_lock".
+** Warning: (vcom-6) -- Waiting for lock by "LUFT-AQUILA@LUFT-AQUILA, pid = 5692
+". Lockfile is "C:/Users/LUFT-AQUILA/Dropbox/Atom/Ajou_Univ/Logic_Circuit/Decoder/work/_lock".
+** Warning: (vcom-6) -- Waiting for lock by "LUFT-AQUILA@LUFT-AQUILA, pid = 5692
+". Lockfile is "C:/Users/LUFT-AQUILA/Dropbox/Atom/Ajou_Univ/Logic_Circuit/Decoder/work/_lock".
+** Warning: (vcom-6) -- Waiting for lock by "LUFT-AQUILA@LUFT-AQUILA, pid = 5692
+". Lockfile is "C:/Users/LUFT-AQUILA/Dropbox/Atom/Ajou_Univ/Logic_Circuit/Decoder/work/_lock".
+-- Giving up waiting on lock. Lockfile is "C:/Users/LUFT-AQUILA/Dropbox/Atom/Ajou_Univ/Logic_Circuit/Decoder/work/_lock".
+** Error: VHDL Compiler exiting
+** Warning: (vcom-6) -- Waiting for lock by "LUFT-AQUILA@LUFT-AQUILA, pid = 5692
+". Lockfile is "C:/Users/LUFT-AQUILA/Dropbox/Atom/Ajou_Univ/Logic_Circuit/Decoder/work/_lock".
+-- Giving up waiting on lock. Lockfile is "C:/Users/LUFT-AQUILA/Dropbox/Atom/Ajou_Univ/Logic_Circuit/Decoder/work/_lock".
+** Error: VHDL Compiler exiting
+** Warning: (vcom-6) -- Waiting for lock by "LUFT-AQUILA@LUFT-AQUILA, pid = 5692
+". Lockfile is "C:/Users/LUFT-AQUILA/Dropbox/Atom/Ajou_Univ/Logic_Circuit/Decoder/work/_lock".
+** Warning: (vcom-6) -- Waiting for lock by "LUFT-AQUILA@LUFT-AQUILA, pid = 5692
+". Lockfile is "C:/Users/LUFT-AQUILA/Dropbox/Atom/Ajou_Univ/Logic_Circuit/Decoder/work/_lock".
+** Warning: (vcom-6) -- Waiting for lock by "LUFT-AQUILA@LUFT-AQUILA, pid = 5692
+". Lockfile is "C:/Users/LUFT-AQUILA/Dropbox/Atom/Ajou_Univ/Logic_Circuit/Decoder/work/_lock".
+** Warning: (vcom-6) -- Waiting for lock by "LUFT-AQUILA@LUFT-AQUILA, pid = 5692
+". Lockfile is "C:/Users/LUFT-AQUILA/Dropbox/Atom/Ajou_Univ/Logic_Circuit/Decoder/work/_lock".
+** Warning: (vcom-6) -- Waiting for lock by "LUFT-AQUILA@LUFT-AQUILA, pid = 5692
+". Lockfile is "C:/Users/LUFT-AQUILA/Dropbox/Atom/Ajou_Univ/Logic_Circuit/Decoder/work/_lock".
+** Warning: (vcom-6) -- Waiting for lock by "LUFT-AQUILA@LUFT-AQUILA, pid = 5692
+". Lockfile is "C:/Users/LUFT-AQUILA/Dropbox/Atom/Ajou_Univ/Logic_Circuit/Decoder/work/_lock".
+** Warning: (vcom-6) -- Waiting for lock by "LUFT-AQUILA@LUFT-AQUILA, pid = 5692
+". Lockfile is "C:/Users/LUFT-AQUILA/Dropbox/Atom/Ajou_Univ/Logic_Circuit/Decoder/work/_lock".
+** Warning: (vcom-6) -- Waiting for lock by "LUFT-AQUILA@LUFT-AQUILA, pid = 5692
+". Lockfile is "C:/Users/LUFT-AQUILA/Dropbox/Atom/Ajou_Univ/Logic_Circuit/Decoder/work/_lock".
+** Warning: (vcom-6) -- Waiting for lock by "LUFT-AQUILA@LUFT-AQUILA, pid = 5692
+". Lockfile is "C:/Users/LUFT-AQUILA/Dropbox/Atom/Ajou_Univ/Logic_Circuit/Decoder/work/_lock".
+** Warning: (vcom-6) -- Waiting for lock by "LUFT-AQUILA@LUFT-AQUILA, pid = 5692
+". Lockfile is "C:/Users/LUFT-AQUILA/Dropbox/Atom/Ajou_Univ/Logic_Circuit/Decoder/work/_lock".
+** Warning: (vcom-6) -- Waiting for lock by "LUFT-AQUILA@LUFT-AQUILA, pid = 5692
+". Lockfile is "C:/Users/LUFT-AQUILA/Dropbox/Atom/Ajou_Univ/Logic_Circuit/Decoder/work/_lock".
+-- Giving up waiting on lock. Lockfile is "C:/Users/LUFT-AQUILA/Dropbox/Atom/Ajou_Univ/Logic_Circuit/Decoder/work/_lock".
+** Error: VHDL Compiler exiting
+
+} {156.0 157.0 160.0 161.0 184.0 185.0} {}}

@@ -1,0 +1,219 @@
+# Compile of Controller.vhd failed with 37 errors.
+# Compile of Decoder_TB.vhd was successful.
+# Compile of Decoder1x2.vhd was successful.
+# Compile of Decoder2x4.vhd was successful.
+# Compile of Decoder3x8.vhd was successful.
+# Compile of Decoder4x16.vhd was successful.
+# 6 compiles, 1 failed with 37 errors.
+# Compile of Controller.vhd was successful.
+# Compile of Decoder_TB.vhd was successful.
+# Compile of Decoder1x2.vhd was successful.
+# Compile of Decoder2x4.vhd was successful.
+# Compile of Decoder3x8.vhd was successful with warnings.
+# Compile of Decoder4x16.vhd was successful.
+# 6 compiles, 0 failed with no errors.
+# Compile of Controller.vhd was successful.
+# Compile of Decoder_TB.vhd was successful.
+# Compile of Decoder1x2.vhd was successful with warnings.
+# Compile of Decoder2x4.vhd was successful.
+# Compile of Decoder3x8.vhd was successful.
+# Compile of Decoder4x16.vhd was successful.
+# 6 compiles, 0 failed with no errors.
+# Compile of Controller.vhd was successful.
+# Compile of Decoder_TB.vhd was successful with warnings.
+# Compile of Decoder1x2.vhd was successful.
+# Compile of Decoder2x4.vhd was successful.
+# Compile of Decoder3x8.vhd was successful.
+# Compile of Decoder4x16.vhd was successful.
+# 6 compiles, 0 failed with no errors.
+# Compile of Controller.vhd was successful.
+# Compile of Decoder_TB.vhd was successful.
+# Compile of Decoder1x2.vhd was successful.
+# Compile of Decoder2x4.vhd was successful.
+# Compile of Decoder3x8.vhd was successful with warnings.
+# Compile of Decoder4x16.vhd was successful.
+# 6 compiles, 0 failed with no errors.
+vsim -gui work.tb
+# vsim -gui work.tb 
+# Start time: 16:18:06 on Jun 23,2019
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.std_logic_arith(body)
+# Loading work.tb(tb_arch)
+# Loading ieee.numeric_std(body)
+# Loading work.controller(structure)
+# Loading work.decoder3x8(d3x8)
+# Loading work.decoder2x4(d2x4)
+# Loading work.decoder4x16(d4x16)
+# Loading work.decoder1x2(d1x2)
+add wave -r /*
+run
+run
+run
+quit -sim
+# End time: 16:19:42 on Jun 23,2019, Elapsed time: 0:01:36
+# Errors: 0, Warnings: 0
+# Compile of Controller.vhd was successful.
+# Compile of Decoder_TB.vhd was successful.
+# Compile of Decoder1x2.vhd was successful.
+# Compile of Decoder2x4.vhd was successful with warnings.
+# Compile of Decoder3x8.vhd was successful.
+# Compile of Decoder4x16.vhd was successful.
+# 6 compiles, 0 failed with no errors.
+# Compile of Controller.vhd failed with 2 errors.
+# Compile of Controller.vhd was successful.
+# Compile of Decoder_TB.vhd was successful.
+# Compile of Decoder1x2.vhd was successful.
+# Compile of Decoder2x4.vhd was successful.
+# Compile of Decoder3x8.vhd was successful.
+# Compile of Decoder4x16.vhd was successful.
+# 6 compiles, 0 failed with no errors.
+vsim -gui work.tb
+# vsim -gui work.tb 
+# Start time: 16:27:39 on Jun 23,2019
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.std_logic_arith(body)
+# Loading work.tb(tb_arch)
+# Loading ieee.numeric_std(body)
+# Loading work.controller(structure)
+# Loading work.decoder3x8(d3x8)
+# Loading work.decoder2x4(d2x4)
+# Loading work.decoder4x16(d4x16)
+# Loading work.decoder1x2(d1x2)
+add wave -r /*
+run
+run
+quit -sim
+# End time: 16:28:44 on Jun 23,2019, Elapsed time: 0:01:05
+# Errors: 0, Warnings: 0
+# Compile of Decoder_TB.vhd was successful.
+vsim -gui work.tb
+# vsim -gui work.tb 
+# Start time: 16:29:03 on Jun 23,2019
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.std_logic_arith(body)
+# Loading work.tb(tb_arch)
+# Loading ieee.numeric_std(body)
+# Loading work.controller(structure)
+# Loading work.decoder3x8(d3x8)
+# Loading work.decoder2x4(d2x4)
+# Loading work.decoder4x16(d4x16)
+# Loading work.decoder1x2(d1x2)
+add wave -r /*
+run
+quit -sim
+# End time: 16:29:51 on Jun 23,2019, Elapsed time: 0:00:48
+# Errors: 0, Warnings: 0
+# Compile of Controller.vhd was successful.
+# Compile of Decoder_TB.vhd was successful.
+# Compile of Decoder1x2.vhd was successful.
+# Compile of Decoder2x4.vhd was successful.
+# Compile of Decoder3x8.vhd was successful.
+# Compile of Decoder4x16.vhd was successful.
+# 6 compiles, 0 failed with no errors.
+vsim -gui work.tb
+# vsim -gui work.tb 
+# Start time: 16:30:05 on Jun 23,2019
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.std_logic_arith(body)
+# Loading work.tb(tb_arch)
+# Loading ieee.numeric_std(body)
+# Loading work.controller(structure)
+# Loading work.decoder3x8(d3x8)
+# Loading work.decoder2x4(d2x4)
+# Loading work.decoder4x16(d4x16)
+# Loading work.decoder1x2(d1x2)
+add wave sim:/tb/*
+add wave -r /*
+run
+# Compile of Controller.vhd failed with 3 errors.
+# Compile of Controller.vhd failed with 3 errors.
+# Compile of Controller.vhd failed with 3 errors.
+# Compile of Decoder_TB.vhd was successful.
+# Break key hit
+# Break key hit
+# Break key hit
+restart -f
+# Loading work.tb(tb_arch)
+run
+# GetModuleFileName: 지정된 모듈을 찾을 수 없습니다.
+# 
+# 
+restart -f -nowave
+# Compile of Decoder_TB.vhd was successful.
+restart -f
+# Loading work.tb(tb_arch)
+run
+# GetModuleFileName: 지정된 모듈을 찾을 수 없습니다.
+# 
+# 
+add wave -r /*
+# Compile of Decoder_TB.vhd was successful.
+restart -f
+# Loading work.tb(tb_arch)
+run
+# GetModuleFileName: 지정된 모듈을 찾을 수 없습니다.
+# 
+# 
+run
+run
+# Compile of Decoder_TB.vhd failed with 5 errors.
+# Compile of Decoder_TB.vhd failed with 3 errors.
+# Compile of Decoder_TB.vhd was successful.
+restart -f
+# Loading work.tb(tb_arch)
+# Warning in wave window restart: (vish-4014) No objects found matching '/tb/A'. 
+run
+# GetModuleFileName: 지정된 모듈을 찾을 수 없습니다.
+# 
+# 
+run
+# Compile of Decoder_TB.vhd was successful.
+restart -f
+# Loading work.tb(tb_arch)
+run
+# GetModuleFileName: 지정된 모듈을 찾을 수 없습니다.
+# 
+# 
+# Compile of Decoder_TB.vhd failed with 5 errors.
+# Compile of Decoder_TB.vhd was successful.
+restart -f
+# Loading work.tb(tb_arch)
+run
+# GetModuleFileName: 지정된 모듈을 찾을 수 없습니다.
+# 
+# 
+run
+run
+run
+run
+# Compile of Decoder_TB.vhd was successful.
+restart -f
+# Loading work.tb(tb_arch)
+run
+# GetModuleFileName: 지정된 모듈을 찾을 수 없습니다.
+# 
+# 
+run
+run
+# Compile of Decoder_TB.vhd failed with 4 errors.
+# Compile of Decoder_TB.vhd failed with 5 errors.
+# Compile of Decoder_TB.vhd failed with 2 errors.
+# Compile of Decoder_TB.vhd was successful.
+restart -f
+# Loading work.tb(tb_arch)
+run
+# GetModuleFileName: 지정된 모듈을 찾을 수 없습니다.
+# 
+# 
+run
+run
+# End time: 19:07:22 on Jun 23,2019, Elapsed time: 2:37:17
+# Errors: 1, Warnings: 0
