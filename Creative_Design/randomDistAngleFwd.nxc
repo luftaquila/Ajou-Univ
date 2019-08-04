@@ -24,24 +24,20 @@ int ColorShiftStart, ColorShiftEnd, CurrerentColor, color;
 int revStart, revEnd, fwdStart, fwdEnd;
 bool turnDir, redFound = false;
 
-sub InitalSet()
-{
+sub InitalSet() {
   SetSensorColorFull(CR);
   SetSensorType(LR, IN_TYPE_LIGHT_ACTIVE);
   SetSensorTouch(TCH1);
   SetSensorTouch(TCH2);
 
   TextOut(0, 0, "Turn Dir?");
-  while(1)
-  {
-    if(ButtonPressed(BTNRIGHT) == true)
-    {
+  while(1) {
+    if(ButtonPressed(BTNRIGHT) == true) {
       turnDir = true;
       TextOut(0, 0, "Turn Dir : RIGHT");
       break;
     }
-    if(ButtonPressed(BTNLEFT) == true)
-    {
+    if(ButtonPressed(BTNLEFT) == true) {
       TextOut(0, 0, "Turn Dir : LEFT");
       break;
     }
@@ -53,28 +49,20 @@ sub InitalSet()
   degree = Angle;
 }
 
-sub ReturnToBase()
-{
-  while(1)
-  {
+sub ReturnToBase() {
+  while(1) {
       //RotateMotorEx(MAC, 40, 200, 0, 1, 1);
 
       revStart = revAngle = RevAngle;
-      while(revAngle <= revStart + 200)
-      {
+      while(revAngle <= revStart + 200) {
         revAngle = RevAngle;
         OnFwd(MAC, 40);
 
-        if(Sensor(LR) < 400)
-        {
-          if(redFound == true)
-            PlaySound(SOUND_UP);
-          else if(redFound == false)
-          {
-            if(turnDir == false)
-              RotateMotorEx(MAC, 40, 65, 100, 1, 1);
-            else if(turnDir = true)
-              RotateMotorEx(MAC, 40, 65, -100, 1, 1);
+        if(Sensor(LR) < 400) {
+          if(redFound == true) PlaySound(SOUND_UP);
+          else if(redFound == false) {
+            if(turnDir == false) RotateMotorEx(MAC, 40, 65, 100, 1, 1);
+            else if(turnDir = true) RotateMotorEx(MAC, 40, 65, -100, 1, 1);
           }
           Off(MAC);
           distance = 1;
@@ -82,18 +70,16 @@ sub ReturnToBase()
         }
       }
       distance -= 1;
-      if(Sensor(LR) < 400) { break; }
+      if(Sensor(LR) < 400) break;
       Off(MAC);
 
       Wait(500);
   }
 }
 
-sub Obstacle()
-{
+sub Obstacle() {
   Off(MB);
-  while(degree <= 0) // 팔 원위치
-  {
+  while(degree <= 0) { // 팔 원위치
     degree = Angle;
     OnFwd(MB, armPower);
   }
@@ -103,13 +89,11 @@ sub Obstacle()
   redFound = false;
 }
 
-sub Red()
-{
+sub Red() {
   Off(MB); // 팔 정지
   ColorShiftStart = degree; // 적색 시작 팔 각도 기록
 
-  while(color == Sensor(CR)) // 적색 끝까지 탐색
-  {
+  while(color == Sensor(CR)) { // 적색 끝까지 탐색
     degree = Angle;
     OnRev(MB, armPower);
     if(degree < -180) break;
@@ -118,8 +102,7 @@ sub Red()
   Off(MB); // 팔 정지
   ColorShiftEnd = Angle; // 적색 끝 팔 각도 기록
 
-  while(((ColorShiftStart + ColorShiftEnd) / 2) != degree) // 적색 중간 위치로 팔 이동
-  {
+  while(((ColorShiftStart + ColorShiftEnd) / 2) != degree) { // 적색 중간 위치로 팔 이동
     degree = Angle;
     OnFwd(MB, rtnArmPower);
   }
@@ -130,8 +113,7 @@ sub Red()
   redFound = true; // 플래그 설정
   redDistance = distance;
 
-  while(degree <= 0) // 팔 원위치
-  {
+  while(degree <= 0) { // 팔 원위치
     degree = Angle;
     OnFwd(MB, armPower);
   }
@@ -139,49 +121,38 @@ sub Red()
 }
 
 
-task main()
-{
+task main() {
   InitalSet();
 
-  while(1)
-  {
+  while(1) {
     NumOut(0, 8, distance);
-    if(redFound == true)
-    {
-      if(distance <= redDistance - 1)
-        goto Forward;
-      else
-      {
-        while(degree > -180) // 스캔 개시
-        {
+    if(redFound == true) {
+      if(distance <= redDistance - 1) goto Forward;
+      else {
+        while(degree > -180) { // 스캔 개시
           degree = Angle;
           OnRev(MB, armPower);
           color = Sensor(CR);
 
-          if(Sensor(TCH1) == 1 || Sensor(TCH2) == 1)
-          {
+          if(Sensor(TCH1) == 1 || Sensor(TCH2) == 1) {
             Obstacle();
             ReturnToBase();
           }
 
-          if(color == RED) // 적색 발견
-          {
+          if(color == RED) { // 적색 발견
             Red();
             ReturnToBase();
           }
 
-          else if(color == BLACK)
-          {
+          else if(color == BLACK) {
             Off(MB); // 팔 정지
             ColorShiftStart = degree; // 경계 시작 팔 각도 기록
 
-            while(color == Sensor(CR) || Sensor(CR) == 3 || Sensor(CR) == 4) // 경계 끝까지 탐색
-            {
+            while(color == Sensor(CR) || Sensor(CR) == 3 || Sensor(CR) == 4) { // 경계 끝까지 탐색
               degree = Angle;
               OnRev(MB, armPower);
               if(degree < -180) break;
-              if(Sensor(TCH1) == 1 || Sensor(TCH2) == 1)
-              {
+              if(Sensor(TCH1) == 1 || Sensor(TCH2) == 1) {
                 Obstacle();
                 ReturnToBase();
                 goto Forward;
@@ -192,8 +163,7 @@ task main()
             Off(MB); // 팔 정지
             ColorShiftEnd = Angle; // 경계 끝 팔 각도 기록
 
-            while(((ColorShiftStart + ColorShiftEnd) / 2) != degree) // 경계 중간 위치로 팔 이동
-            {
+            while(((ColorShiftStart + ColorShiftEnd) / 2) != degree) { // 경계 중간 위치로 팔 이동
               degree = Angle;
               OnFwd(MB, rtnArmPower);
             }
@@ -202,18 +172,15 @@ task main()
             Wait(150);
             PlaySound(SOUND_DOWN); // 경계 인식
 
-            while(degree > -180) // 끝까지 추가 탐색
-            {
+            while(degree > -180) { // 끝까지 추가 탐색
               degree = Angle;
               OnRev(MB, armPower);
               color = Sensor(CR);
-              if(color == RED) // 적색 추가 발견 시
-              {
+              if(color == RED) { // 적색 추가 발견 시
                 Red();
                 break;
               }
-              else if(Sensor(TCH1) == 1 || Sensor(TCH2) == 1)
-              {
+              else if(Sensor(TCH1) == 1 || Sensor(TCH2) == 1) {
                 Obstacle();
                 break;
               }
@@ -222,8 +189,7 @@ task main()
             }
             Off(MB);
 
-            while(degree <= 0) // 팔 원위치
-            {
+            while(degree <= 0) { // 팔 원위치
               degree = Angle;
               OnFwd(MB, armPower);
             }
@@ -234,38 +200,31 @@ task main()
         }
       }
     }
-    else
-    {
-      while(degree > -180) // 스캔 개시
-      {
+    else {
+      while(degree > -180) { // 스캔 개시
         degree = Angle;
         OnRev(MB, armPower);
         color = Sensor(CR);
 
-        if(Sensor(TCH1) == 1 || Sensor(TCH2) == 1)
-        {
+        if(Sensor(TCH1) == 1 || Sensor(TCH2) == 1) {
           Obstacle();
           ReturnToBase();
         }
 
-        if(color == RED) // 적색 발견
-        {
+        if(color == RED) { // 적색 발견
           Red();
           ReturnToBase();
         }
 
-        else if(color == BLACK)
-        {
+        else if(color == BLACK) {
           Off(MB); // 팔 정지
           ColorShiftStart = degree; // 경계 시작 팔 각도 기록
 
-          while(color == Sensor(CR) || Sensor(CR) == 3 || Sensor(CR) == 4) // 경계 끝까지 탐색
-          {
+          while(color == Sensor(CR) || Sensor(CR) == 3 || Sensor(CR) == 4) { // 경계 끝까지 탐색
             degree = Angle;
             OnRev(MB, armPower);
             if(degree < -180) break;
-            if(Sensor(TCH1) == 1 || Sensor(TCH2) == 1)
-            {
+            if(Sensor(TCH1) == 1 || Sensor(TCH2) == 1) {
               Obstacle();
               ReturnToBase();
               goto Forward;
@@ -276,8 +235,7 @@ task main()
           Off(MB); // 팔 정지
           ColorShiftEnd = Angle; // 경계 끝 팔 각도 기록
 
-          while(((ColorShiftStart + ColorShiftEnd) / 2) != degree) // 경계 중간 위치로 팔 이동
-          {
+          while(((ColorShiftStart + ColorShiftEnd) / 2) != degree) { // 경계 중간 위치로 팔 이동
             degree = Angle;
             OnFwd(MB, rtnArmPower);
           }
@@ -286,18 +244,15 @@ task main()
           Wait(150);
           PlaySound(SOUND_DOWN); // 경계 인식
 
-          while(degree > -180) // 끝까지 추가 탐색
-          {
+          while(degree > -180) { // 끝까지 추가 탐색
             degree = Angle;
             OnRev(MB, armPower);
             color = Sensor(CR);
-            if(color == RED) // 적색 추가 발견 시
-            {
+            if(color == RED) { // 적색 추가 발견 시
               Red();
               break;
             }
-            else if(Sensor(TCH1) == 1 || Sensor(TCH2) == 1)
-            {
+            else if(Sensor(TCH1) == 1 || Sensor(TCH2) == 1) {
               Obstacle();
               break;
             }
@@ -306,8 +261,7 @@ task main()
           }
           Off(MB);
 
-          while(degree <= 0) // 팔 원위치
-          {
+          while(degree <= 0) { // 팔 원위치
             degree = Angle;
             OnFwd(MB, armPower);
           }
@@ -319,8 +273,7 @@ task main()
       }
     }
 
-    while(degree <= 0) // 팔 원위치
-    {
+    while(degree <= 0) { // 팔 원위치
       degree = Angle;
       OnFwd(MB, armPower);
     }
